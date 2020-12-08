@@ -1,4 +1,4 @@
-在namelist利用git加上自己的名字
+﻿在namelist利用git加上自己的名字
 连续朋友
 耀君
 Na&N
@@ -6,3 +6,4 @@ Na&N
 BaoZouZac
 啊哈
 灼华
+全员完成
