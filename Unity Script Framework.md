@@ -51,8 +51,9 @@
    <br/>timeLimitation.timePass(int passedSeconds)
 3. 创建一个canvas实例，利用sprite制作简单的计时器
 4. 建立一个公共变量，命名为timeRest，将剩余时间赋值给timeRest
-5. 要点：避免使用开销过大的脚本生命周期
-   
+5. 要点：避免使用开销过大的脚本生命周期,建议使用协程
+6. [参考资料1：实现倒计时的功能](https://blog.csdn.net/qq_42672770/article/details/105603707?utm_medium=distribute.pc_relevant.none-task-blog-title-2&spm=1001.2101.3001.4242)   
+7. [参考资料2：sprite动画总结](https://blog.csdn.net/WangHaoDiablo/article/details/52838583?locationNum=10&fps=1)
 
 - 棋盘框架
 1. 棋盘框架脚本：chessBoardManager
@@ -63,3 +64,5 @@
       1. 获取玩家位置，将玩家下一步可以走的cell（十字型）变黄；射线检测，将鼠标所指的cell变蓝
       2. 输入事件检测1：如果玩家点击可行的黄色cell，将玩家角色移动到对应的cell上
       3. 输入事件检测2：玩家通过awds键向对应格子移动
+3. [参考资料1：国际象棋案例](https://blog.csdn.net/kmyhy/article/details/82690409)
+4. [参考资料2：生成国际象棋棋盘](https://blog.csdn.net/qq_43427963/article/details/98474354?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-8.not_use_machine_learn_pai&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromBaidu-8.not_use_machine_learn_pai)
