@@ -1,25 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ebb3d59-1a16-45b0-949f-fa4e601ada37" name="Default Changelist" comment="" />
+    <list default="true" id="5ebb3d59-1a16-45b0-949f-fa4e601ada37" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/timeLimitation.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teching Project/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teching Project/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teching Project/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teching Project/.idea/indexLayout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Teching Project/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Teching Project/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../作业/20201208/作业20201208.docx" beforeDir="false" afterPath="$PROJECT_DIR$/../作业/20201208/作业20201208.docx" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://E:/BaiduNetdiskDownload/unity随堂资料/17课件/Touhou TTD/Assets/script/DannMakuCompiler.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://E:/BaiduNetdiskDownload/unity随堂资料/17课件/Touhou TTD/Assets/dannMakuPool.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/timeLimitation.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/blockPool.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/DrawGizmos.cs" />
+        <option value="$PROJECT_DIR$/Assets/timeLimitation  Yaojun.cs" />
+        <option value="$PROJECT_DIR$/Assets/timeLimitationYaojun.cs" />
+        <option value="$PROJECT_DIR$/Assets/timeLimitation.cs" />
+        <option value="$PROJECT_DIR$/Assets/playerManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/cell.cs" />
+        <option value="$PROJECT_DIR$/Assets/cluesCompiler.cs" />
+        <option value="$PROJECT_DIR$/Assets/blockPool.cs" />
+        <option value="$PROJECT_DIR$/Assets/chessBoardManager.cs" />
       </list>
     </option>
   </component>
   <component name="ProjectId" id="1l0DJjEZKXzNBLDOgDskI9hop8f" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.34968355" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.30063292" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
@@ -55,6 +103,10 @@
       <option name="presentableId" value="Default" />
       <updated>1606725050765</updated>
       <workItem from="1606725056223" duration="817000" />
+      <workItem from="1608191414889" duration="567000" />
+      <workItem from="1608192027610" duration="157000" />
+      <workItem from="1608369365214" duration="9640000" />
+      <workItem from="1608424556024" duration="5469000" />
     </task>
     <servers />
   </component>
@@ -63,7 +115,89 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state width="1326" height="246" key="GridCell.Tab.0.bottom" timestamp="1608191984944">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608191984944" />
+    <state width="1326" height="246" key="GridCell.Tab.0.center" timestamp="1608191984944">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1608191984944" />
+    <state width="1326" height="246" key="GridCell.Tab.0.left" timestamp="1608191984944">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1608191984944" />
+    <state width="1326" height="246" key="GridCell.Tab.0.right" timestamp="1608191984944">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1608191984944" />
+    <state width="1326" height="246" key="GridCell.Tab.1.bottom" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.1.center" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.1.left" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.1.right" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.2.bottom" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.2.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.2.center" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.2.center/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.2.left" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.2.left/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.2.right" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.2.right/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.3.bottom" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.3.bottom/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.3.center" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.3.center/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.3.left" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.3.left/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state width="1326" height="246" key="GridCell.Tab.3.right" timestamp="1608191984945">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state width="1326" height="246" key="GridCell.Tab.3.right/0.0.1366.728@0.0.1366.728" timestamp="1608191984945" />
+    <state x="339" y="157" key="run.anything.popup" timestamp="1608379721438">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="339" y="157" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608379721438" />
   </component>
 </project>
