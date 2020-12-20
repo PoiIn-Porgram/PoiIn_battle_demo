@@ -29,7 +29,7 @@ public class blockPool : MonoBehaviour
         for (int i = 0; i < initialNumberOfBlock; i++)
         {
             distributeTheBlock(new Vector2Int(i / boardScale.x, i % boardScale.y), 0);
-        }
+        }                                            //占用太多的内存空间
         _compiler = GetComponent<cluesCompiler>();
         _compiler.distributeClue();
     }
