@@ -2,7 +2,6 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
-
 public class cluesCompiler : MonoBehaviour
 {
     public enum blockTpye
@@ -20,8 +19,9 @@ public class cluesCompiler : MonoBehaviour
         public blockTpye type;
     }
     public List<clue> cluesList;
+    
     private blockPool Pool;
-    private void Start()
+    public void Awake()
     {
         Pool = GetComponent<blockPool>();
     }
@@ -32,6 +32,7 @@ public class cluesCompiler : MonoBehaviour
         {
             return;
         }
+        Debug.Log(cluesList[0].coordinate);
         Pool.distributeTheBlock(cluesList[0].coordinate,(int)cluesList[0].type);
         cluesList.Remove(cluesList[0]);
         distributeClue();

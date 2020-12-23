@@ -21,32 +21,22 @@ public class blockPool : MonoBehaviour
     private GameObject _gameObject;
     private Vector2Int boardScale;
     private cluesCompiler _compiler;
-    private void Start()
+    private blockTpye type;
+    public void initializeBoard()
     {
-        
         boardScale = GetComponent<chessBoardManager>().boradScale;
         initialNumberOfBlock = boardScale.x * boardScale.y;
         for (int i = 0; i < initialNumberOfBlock; i++)
         {
-            distributeTheBlock(new Vector2Int(i / boardScale.x, i % boardScale.y), 0);
+            distributeTheBlock(new Vector2Int(i / boardScale.x, i % boardScale.y),0);
         }                                            //占用太多的内存空间
-        _compiler = GetComponent<cluesCompiler>();
-        _compiler.distributeClue();
-    }
-    
-    public void spawnBoard(Vector2Int cellCoordinate)
-    {
-        if (Pool[cellCoordinate].activeSelf == false)
-        {
-            Pool[cellCoordinate].SetActive(true);
-        }
       
     }
     public void distributeTheBlock(Vector2Int coordinate,int typeNum)
     {
         _gameObject = Instantiate(blockTypeList[typeNum], this.transform,false);
         _gameObject.transform.position =new Vector3(coordinate.x,0,coordinate.y)+transform.position;
-        _gameObject.SetActive(false);
+        _gameObject.SetActive(true);
         if (Pool.ContainsKey(coordinate) == true)
         {
             Pool[coordinate] = _gameObject;
@@ -57,12 +47,20 @@ public class blockPool : MonoBehaviour
         }
        
     }
+
     public void recycleBoard(Vector2Int cellCoordinate)
     {
         if (Pool[cellCoordinate].activeSelf == true)
         {
             Pool[cellCoordinate].SetActive(false);
         }
-        
+    }//封印
+    public void spawnBoard(Vector2Int cellCoordinate)
+    {
+        if (Pool[cellCoordinate].activeSelf == false)
+        {
+            Pool[cellCoordinate].SetActive(true);
+        }//封印
+      
     }
 }
