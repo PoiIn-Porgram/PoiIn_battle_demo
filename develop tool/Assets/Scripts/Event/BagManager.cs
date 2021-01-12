@@ -21,8 +21,8 @@ public class BagManager : MonoBehaviour {
         //如果GUI上面的物品类型为空
         if(cells[0].GetComponentInChildren<ItemOnGUI>().itemonguiStyle==ItemOnGUIStyle.itemonGUIstyle.gui_EMPTY)
         {
-            //则下一个将要被玩家创建的方块为空
-            nextblock = null;
+            //则下一个将要被玩家创建的方块为空,为了测试，使用了一个土方
+            nextblock = mapmanager.blocks[(int)BlockStyle.blockStyle.DIRT - 1];
         }
         else
         {
@@ -33,6 +33,7 @@ public class BagManager : MonoBehaviour {
     void Update()
     {
         CheckItemStyle(hightlight);
+        nextblock = mapmanager.blocks[(int)BlockStyle.blockStyle.DIRT - 1];
         float h = Input.GetAxisRaw("Mouse ScrollWheel");
         if (h>0)
         {
