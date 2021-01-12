@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MapManager : MonoBehaviour {
-
+    
     public Dictionary<int, Block> blocksdic = new Dictionary<int, Block>();
     /// <summary>
     /// 用以柏林噪声采样的X和Z值（柏林噪声返回的是Y值）
@@ -43,7 +43,7 @@ public class MapManager : MonoBehaviour {
         float y = 0;
         float y1 = 0;
         int id = 0;
-
+        
         for (int i = 0; i < Width; i++)
         {
             for (int j = 0; j < depth; j++)
@@ -66,7 +66,7 @@ public class MapManager : MonoBehaviour {
                 {
                     id = 1;
                 }
-            
+                
                 Block b= Instantiate(blocks[id], new Vector3(i, y, j), Quaternion.identity);
                 float xSample = (b.transform.localPosition.x + seedX) / relief;
                 float zSample = (b.transform.localPosition.z + seedZ) / relief;

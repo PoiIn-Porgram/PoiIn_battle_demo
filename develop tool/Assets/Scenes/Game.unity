@@ -152,8 +152,8 @@ RectTransform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 2115898124}
   - {fileID: 1511561500}
+  - {fileID: 2115898124}
   m_Father: {fileID: 735311596}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1139,7 +1139,6 @@ MonoBehaviour:
   - {fileID: 980529472}
   - {fileID: 118873263}
   - {fileID: 1052600684}
-  hightlight: {fileID: 2115898123}
   mapmanager: {fileID: 1916418725}
   nextblock: {fileID: 0}
   itemOnguiSprites:
@@ -1841,7 +1840,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224494530418996578, guid: 5358b9e64e56c154ba83cb9a2d216b31, type: 3}
       propertyPath: m_RootOrder
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 224494530418996578, guid: 5358b9e64e56c154ba83cb9a2d216b31, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -1883,7 +1882,8 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114224120804263002, guid: 5358b9e64e56c154ba83cb9a2d216b31, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 5358b9e64e56c154ba83cb9a2d216b31, type: 3}
 --- !u!224 &1463341776 stripped
 RectTransform:
@@ -2002,6 +2002,10 @@ PrefabInstance:
       propertyPath: itemonguiStyle
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114538239739914972, guid: 1ad84ab07103ee047a38c99be8209fee, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224915550181621962, guid: 1ad84ab07103ee047a38c99be8209fee, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2032,7 +2036,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 224915550181621962, guid: 1ad84ab07103ee047a38c99be8209fee, type: 3}
       propertyPath: m_RootOrder
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224915550181621962, guid: 1ad84ab07103ee047a38c99be8209fee, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -2074,7 +2078,8 @@ PrefabInstance:
       propertyPath: m_Pivot.y
       value: 0.5
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114538239739914972, guid: 1ad84ab07103ee047a38c99be8209fee, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 1ad84ab07103ee047a38c99be8209fee, type: 3}
 --- !u!224 &1511561500 stripped
 RectTransform:
@@ -3051,7 +3056,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 41715452}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}

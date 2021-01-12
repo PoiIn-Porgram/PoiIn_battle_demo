@@ -7,5 +7,6 @@ public class BlockDirt : Block {
     {
         this.Hardness = this.setHardness(1);
         this.blockId = this.setBlockId(0);
+        
     }
 }
