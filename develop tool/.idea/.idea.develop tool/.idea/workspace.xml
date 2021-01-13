@@ -2,11 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cc4c9e-5f0e-4135-b2dd-cedecc727783" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Item/ItemDirt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Item/ItemDirt.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/BlockEmpty.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block/BlockEmpty.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block/BlockDirt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block/BlockDirt.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block/BlockStone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block/BlockStone.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block/BlockStyle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block/BlockStyle.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/MapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/MapManager.cs" afterDir="false" />
     </list>
@@ -25,6 +25,8 @@
         <option value="$PROJECT_DIR$/Assets/Standard Assets/Utility/SimpleActivatorMenu.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Event/Point_Ray.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/MapManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Block/BlockStone.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Block/BlockStyle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" />
       </list>
     </option>
@@ -74,6 +76,7 @@
       <workItem from="1610422086091" duration="313000" />
       <workItem from="1610430308839" duration="1551000" />
       <workItem from="1610456528862" duration="1360000" />
+      <workItem from="1610458226656" duration="890000" />
     </task>
     <servers />
   </component>

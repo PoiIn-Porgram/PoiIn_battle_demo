@@ -53,7 +53,8 @@ public class MapManager : MonoBehaviour {
                 float noise1 = Mathf.PerlinNoise(xSample1, zSample1);
                 y1 = maxHeight * noise1;
                 // 为了模仿我的世界的格子风 将每一次计算出来的浮点数值转换到整数值
-                y1 = Mathf.Round(y1);
+                //y1 = Mathf.Round(y1); random map
+                y1 = maxHeight * 0.2f;
                 if (y1 > maxHeight * 0.3f)
                 {
                     id = 2;
@@ -74,7 +75,7 @@ public class MapManager : MonoBehaviour {
                 y = maxHeight * noise;
                 // 为了模仿我的世界的格子风 将每一次计算出来的浮点数值转换到整数值
                 y = Mathf.Round(y);
-                b.transform.localPosition = new Vector3(b.transform.localPosition.x, y, b.transform.localPosition.z);
+                b.transform.localPosition = new Vector3(b.transform.localPosition.x, 0, b.transform.localPosition.z);
                 //blocksdic.Add(b.blockId, b);
                 b.setBlockUnbreakable(true);
             }

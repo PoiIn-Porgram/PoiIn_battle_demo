@@ -32,6 +32,11 @@ public class BagManager : MonoBehaviour {
             nextblock = mapmanager.blocks[(int)BlockStyle.blockStyle.STONE - 1];
             Debug.Log("stone");
         }
+        else if (numberInput == 3)
+        {
+            nextblock = mapmanager.blocks[(int)BlockStyle.blockStyle.TEST - 1];
+            Debug.Log("test");
+        }
         
         float h = Input.GetAxisRaw("Mouse ScrollWheel");
         if (h>0)

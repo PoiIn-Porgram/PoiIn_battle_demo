@@ -21,6 +21,10 @@ public class BlockStyle{
         /// <summary>
         /// 草地
         /// </summary>
-        GRASS
+        GRASS,
+        /// <summary>
+        /// 测试方块
+        /// </summary>
+        TEST
     }
 }
