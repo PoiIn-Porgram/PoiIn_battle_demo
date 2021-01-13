@@ -2,7 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65cc4c9e-5f0e-4135-b2dd-cedecc727783" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Event/Point_Ray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Event/Point_Ray.cs" afterDir="false" />
     </list>
@@ -19,8 +21,8 @@
       <list>
         <option value="$PROJECT_DIR$/Assets/Standard Assets/Utility/ForcedReset.cs" />
         <option value="$PROJECT_DIR$/Assets/Standard Assets/Utility/SimpleActivatorMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Event/Point_Ray.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" />
       </list>
     </option>
   </component>
@@ -65,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1610463194189</updated>
-      <workItem from="1610463218604" duration="1409000" />
+      <workItem from="1610463218604" duration="1741000" />
     </task>
     <servers />
   </component>
