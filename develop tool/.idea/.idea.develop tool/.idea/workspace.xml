@@ -1,14 +1,35 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="65cc4c9e-5f0e-4135-b2dd-cedecc727783" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.develop tool/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/BlockEmpty.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block/BlockEmpty.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scenes/Game.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/Game.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block/BlockStone.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block/BlockStone.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block/BlockStyle.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block/BlockStyle.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/BlockDirt.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block/BlockDirt.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/BlockStone.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs/Block/BlockStone.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/Cube.prefab" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs/Block/Cube.prefab.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Block/BlockDirt.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Block/BlockDirt.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Scripts/World/MapManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/World/MapManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scripts/Event/Point_Ray.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scripts/Event/Point_Ray.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -18,16 +39,21 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/blockTest.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/Standard Assets/Utility/ForcedReset.cs" />
         <option value="$PROJECT_DIR$/Assets/Standard Assets/Utility/SimpleActivatorMenu.cs" />
-        <option value="$PROJECT_DIR$/Assets/Scripts/Event/Point_Ray.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/World/MapManager.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Block/BlockStone.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Block/BlockStyle.cs" />
         <option value="$PROJECT_DIR$/Assets/Scripts/Event/BagManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Event/Point_Ray.cs" />
+        <option value="$PROJECT_DIR$/Assets/Scripts/Block/BlockDirt.cs" />
+        <option value="$PROJECT_DIR$/Assets/blockTest.cs" />
       </list>
     </option>
   </component>
@@ -77,6 +103,7 @@
       <workItem from="1610430308839" duration="1551000" />
       <workItem from="1610456528862" duration="1360000" />
       <workItem from="1610458226656" duration="890000" />
+      <workItem from="1610590368950" duration="3615000" />
     </task>
     <servers />
   </component>
@@ -85,7 +112,28 @@
   </component>
   <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
   <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1610594061643">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="137" y="18" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1610594061643" />
+    <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog" timestamp="1610594031828">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1610594031828" />
   </component>
 </project>

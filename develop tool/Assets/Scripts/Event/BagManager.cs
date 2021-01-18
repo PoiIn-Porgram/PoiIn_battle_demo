@@ -34,7 +34,7 @@ public class BagManager : MonoBehaviour {
         }
         else if (numberInput == 3)
         {
-            nextblock = mapmanager.blocks[(int)BlockStyle.blockStyle.TEST - 1];
+            nextblock = mapmanager.blocks[(int)BlockStyle.blockStyle.TEST];
             Debug.Log("test");
         }
         

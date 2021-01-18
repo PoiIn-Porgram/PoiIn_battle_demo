@@ -109,6 +109,11 @@ public class Point_Ray : MonoBehaviour {
                 {
                     _hit.transform.parent.GetComponent<Block>().OnBlockClicked(items[(int)BlockStyle.blockStyle.STONE-1]);
                 }
+                if (_hit.transform.parent.GetComponent<Block>().getBlockstyle() == BlockStyle.blockStyle.TEST)
+                {
+                    print("testCube");
+                    _hit.transform.parent.GetComponent<Block>().OnBlockClicked(items[(int)BlockStyle.blockStyle.TEST-1]);
+                }
             }
         }
     }
