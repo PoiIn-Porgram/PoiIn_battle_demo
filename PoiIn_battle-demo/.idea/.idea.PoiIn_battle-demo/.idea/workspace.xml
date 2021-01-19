@@ -22,9 +22,7 @@
     <list default="true" id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/indexLayout.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cameraTrack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cameraTrack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/chracterMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracterMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +64,7 @@
         <option value="$PROJECT_DIR$/Assets/chracterMove.cs" />
         <option value="$PROJECT_DIR$/Assets/testController.cs" />
         <option value="$PROJECT_DIR$/Assets/cameraTrack.cs" />
+        <option value="$PROJECT_DIR$/Assets/statusList.cs" />
       </list>
     </option>
   </component>
@@ -116,7 +115,7 @@
       <workItem from="1610966831639" duration="5971000" />
       <workItem from="1610980495638" duration="6400000" />
       <workItem from="1611020885665" duration="5592000" />
-      <workItem from="1611036642321" duration="3120000" />
+      <workItem from="1611036642321" duration="3932000" />
     </task>
     <servers />
   </component>
