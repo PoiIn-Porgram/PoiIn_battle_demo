@@ -564,7 +564,7 @@ MonoBehaviour:
   - statrPosition: {x: 4, y: 0, z: 2}
     Type: 0
   enemyList:
-  - {fileID: 5634451087686142815, guid: 2913ed969584bf540839b10696599df1, type: 3}
+  - {fileID: 1836309959881502258, guid: ffa9327e36ff5d04c9b897d13b7610d3, type: 3}
 --- !u!1 &819931920
 GameObject:
   m_ObjectHideFlags: 0
@@ -642,8 +642,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cubeList:
-  - {fileID: 6906786248114494359, guid: 9758cf3b8855343488934c0555ee6b93, type: 3}
-  - {fileID: 5297735313605906635, guid: f62e8dc13f48b9f488dd1f48a5b51614, type: 3}
+  - {fileID: 4454914162111579101, guid: 1cfacae3a7e787848ab530a7db6c4612, type: 3}
+  - {fileID: 6117171137733293269, guid: 65a036d66627c1848963a9371968bba7, type: 3}
 --- !u!114 &917839728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1076,7 +1076,7 @@ GameObject:
   - component: {fileID: 1316911469}
   m_Layer: 0
   m_Name: Sprite-0001_0
-  m_TagString: Untagged
+  m_TagString: 2D_OBJ
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

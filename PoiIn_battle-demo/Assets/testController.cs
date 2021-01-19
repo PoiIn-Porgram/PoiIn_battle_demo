@@ -9,11 +9,13 @@ public class testController : MonoBehaviour
     private chracterMove _chracterMove;
     private dice _dice;
     private sinarioController _sinarioController;
+    private cameraTrack _cameraTrack;
     private void Start()
     {
         _chracterMove = FindObjectOfType<chracterMove>();
         _dice = FindObjectOfType<dice>();
         _sinarioController = FindObjectOfType<sinarioController>();
+        _cameraTrack = FindObjectOfType<cameraTrack>();
     }
 
     private void OnGUI()
@@ -46,6 +48,11 @@ public class testController : MonoBehaviour
         if (GUILayout.Button("nextSinario"))
         {
             _sinarioController.nextSinario();
+        }
+        
+        if (GUILayout.Button("rotate"))
+        {
+           _cameraTrack.RotateTheCamera(1);
         }
     }
 }

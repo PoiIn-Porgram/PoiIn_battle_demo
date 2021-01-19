@@ -18,7 +18,7 @@ public class chracterMove : MonoBehaviour
     }
 
     private GameObject cam;
-    private Vector3Int reletiveDistance;
+    private Vector3 reletiveDistance;
     private eventSinario _eventSinario;
     private void Start()
     {
