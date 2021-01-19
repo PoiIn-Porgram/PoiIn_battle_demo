@@ -10,10 +10,10 @@
     C|命令关键词|参数
         1.C|setbgm|bgm名    //播放指定bgm
         2.C|stopbgm         //停止当前bgm
-        C|setcharacter|立绘名|绘制位置（left,middle或right）//绘制立绘
-        C|erasecharacter|立绘位置   //擦除某位置的立绘
-        C|setscene|背景名称         //呈现某一背景图
-        C|deletescene              //消除背景
+        3.C|setcharacter|立绘名|绘制位置（left,middle或right）//绘制立绘
+        4.C|erasecharacter|立绘位置   //擦除某位置的立绘
+        5.C|setscene|背景名称         //呈现某一背景图
+        6.C|deletescene              //消除背景
 4.选择支脚本Selection（标识符为S）
 
     S|按钮1文字|按钮1跳转行|按钮2文字|按钮2跳转行....
@@ -23,7 +23,8 @@
     *| 注释内容     //用于写注释，不解析
 
 6.举例
-    *|BGM的名称要用半角双引号标注
+    *|BGM的名称要用半角双引号标注  
+    
     C|setcharacter|M.png|middle
     *|想要更多的效果，比如文字跳动，变色之类的，需要提前说明
     N|没有人在背后对你扔石子，也没有恐惧鄙夷的目光看向你
