@@ -45,7 +45,7 @@ public class initializeBoard : MonoBehaviour
         thisBlock = Instantiate(_cubeManager.cubeList[thisBlockCursor.blockStyle]);
         thisBlock.SetActive(true);
         thisBlock.transform.SetParent(this.transform);
-        thisBlock.transform.position = thisBlockCursor.position;
+        thisBlock.transform.position = thisBlockCursor.position+new Vector3(0,0.32f,0);
         
 
     }

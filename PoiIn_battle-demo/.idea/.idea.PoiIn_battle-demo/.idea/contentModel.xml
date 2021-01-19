@@ -14,52 +14,12 @@
         <e p="demo.txt" t="Include" />
         <e p="demo2.txt" t="Include" />
         <e p="dice.cs" t="Include" />
+        <e p="enemyAI.cs" t="Include" />
+        <e p="enemyStatus.cs" t="Include" />
+        <e p="eventSinario.cs" t="Include" />
         <e p="initializeBoard.cs" t="Include" />
         <e p="JSON.cs" t="Include" />
         <e p="loadMap.cs" t="Include" />
-        <e p="Scripts" t="Include">
-          <e p="AVGArchive.cs" t="Include" />
-          <e p="AVGController.cs" t="Include" />
-          <e p="AVGExcelLoader.cs" t="Include" />
-          <e p="AVGFrame.cs" t="Include" />
-          <e p="AVGGameManager.cs" t="Include" />
-          <e p="AVGLoader.cs" t="Include" />
-          <e p="AVGSceneManager.cs" t="Include" />
-          <e p="AVGSetting.cs" t="Include" />
-          <e p="Default" t="Include">
-            <e p="AVGActionDefault.cs" t="Include" />
-            <e p="AVGAnimationDefault.cs" t="Include" />
-            <e p="AVGAroundDefault.cs" t="Include" />
-            <e p="AVGEventDefault.cs" t="Include" />
-          </e>
-          <e p="Interface" t="Include">
-            <e p="AVGModel.cs" t="Include" />
-            <e p="Duo1JAction.cs" t="Include" />
-            <e p="Duo1JAnimation.cs" t="Include" />
-            <e p="Duo1JAround.cs" t="Include" />
-            <e p="Duo1JAVG.cs" t="Include" />
-            <e p="Duo1JEvent.cs" t="Include" />
-            <e p="Duo1JInput.cs" t="Include" />
-            <e p="Duo1JLoader.cs" t="Include" />
-          </e>
-          <e p="Model" t="Include">
-            <e p="AnimationModel.cs" t="Include" />
-            <e p="ChooseModel.cs" t="Include" />
-            <e p="CommandModel.cs" t="Include" />
-            <e p="EventModel.cs" t="Include" />
-            <e p="Save" t="Include">
-              <e p="PlaySave.cs" t="Include" />
-              <e p="SettingSave.cs" t="Include" />
-            </e>
-            <e p="TextModel.cs" t="Include" />
-          </e>
-          <e p="ParamUtil.cs" t="Include" />
-          <e p="Test" t="Include">
-            <e p="AVG1Around.cs" t="Include" />
-            <e p="InterfaceExample.cs" t="Include" />
-            <e p="Test.cs" t="Include" />
-          </e>
-        </e>
         <e p="sinarioController.cs" t="Include" />
         <e p="testController.cs" t="Include" />
         <e p="testMap.cs" t="Include" />

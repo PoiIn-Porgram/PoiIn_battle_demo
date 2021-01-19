@@ -19,11 +19,13 @@ public class chracterMove : MonoBehaviour
 
     private GameObject cam;
     private Vector3Int reletiveDistance;
+    private eventSinario _eventSinario;
     private void Start()
     {
         _loadMap = FindObjectOfType<loadMap>();
          cam = GameObject.FindGameObjectWithTag("MainCamera");
          reletiveDistance = cam.GetComponent<cameraTrack>().cameraReletivePosition;
+         _eventSinario = FindObjectOfType<eventSinario>();
     }
 
     IEnumerator lerpMove()
@@ -57,7 +59,7 @@ public class chracterMove : MonoBehaviour
         
     }
 
-    private void  moveTo(direction _direction)
+    public void  moveTo(direction _direction)
     {
         switch (_direction)
         {
@@ -68,6 +70,7 @@ public class chracterMove : MonoBehaviour
                     thisPosition.z += 1;
                 
                 targetPosition = thisPosition + new Vector3Int(0,chracterHeight,0);
+                _eventSinario.checkSinario(thisPosition);
                 StartCoroutine(lerpMove());
                 break;
             case direction.left:
@@ -76,6 +79,7 @@ public class chracterMove : MonoBehaviour
                     thisPosition.z )))
                     thisPosition.x -= 1;
                 targetPosition = thisPosition + new Vector3Int(0,chracterHeight,0);
+                _eventSinario.checkSinario(thisPosition);
                 StartCoroutine(lerpMove());
                 break;
             case direction.back:
@@ -84,6 +88,7 @@ public class chracterMove : MonoBehaviour
                     thisPosition.z - 1)))
                     thisPosition.z -= 1;
                 targetPosition = thisPosition + new Vector3Int(0,chracterHeight,0);
+                _eventSinario.checkSinario(thisPosition);
                 StartCoroutine(lerpMove());
                 break;
             case direction.right:
@@ -92,6 +97,8 @@ public class chracterMove : MonoBehaviour
                     thisPosition.z )))
                     thisPosition.x += 1;
                 targetPosition = thisPosition + new Vector3Int(0,chracterHeight,0);
+                print(targetPosition);
+                _eventSinario.checkSinario(thisPosition);
                 StartCoroutine(lerpMove());
                 break;
         }

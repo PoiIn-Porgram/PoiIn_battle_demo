@@ -30,8 +30,7 @@ public class testController : MonoBehaviour
         }
         if (GUILayout.Button("S"))
         {
-            _chracterMove.Direction = chracterMove.direction.back;
-            _chracterMove.confirm = true;
+            _chracterMove.moveTo(chracterMove.direction.back);
         }
         if (GUILayout.Button("D"))
         {
