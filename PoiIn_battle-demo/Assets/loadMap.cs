@@ -12,6 +12,6 @@ public class loadMap : MonoBehaviour
 
         _testMap = GetComponent<testMap>();
         //_testMap.initializeTestMap();
-        _testMap.LoadAvatarData();
+        _testMap.LoadData();
     }
 }

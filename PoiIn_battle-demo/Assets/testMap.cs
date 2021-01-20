@@ -10,12 +10,8 @@ using System.Linq;
 public class testMap : MonoBehaviour
 {
 	public Dictionary<Vector3Int, int> savedBlocks = new Dictionary<Vector3Int, int>();
-
-	public void printEvent()
-	{
-		Debug.Log("666");
-	}
-	public void LoadAvatarData()
+	
+	public void LoadData()
 	{
 		JSON resJson = new JSON();
 		
@@ -30,7 +26,6 @@ public class testMap : MonoBehaviour
 		foreach (string s in blockLoaded)
 		{
 			Parse(s);
-			
 		}
 		Debug.Log("load_success");
 	}

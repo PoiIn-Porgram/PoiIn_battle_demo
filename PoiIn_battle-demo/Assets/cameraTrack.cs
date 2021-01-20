@@ -16,7 +16,8 @@ public class cameraTrack : MonoBehaviour
         _objects2D = GameObject.FindGameObjectsWithTag("2D_OBJ");
 
     }
-
+    
+    
     public void RotateTheCamera(int revolveDirection)
     {
         cameraReletivePosition = Quaternion.Euler(0, 90, 0)*cameraReletivePosition;

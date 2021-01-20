@@ -10,6 +10,7 @@
         <e p="changeLine.cs" t="Include" />
         <e p="changeName.cs" t="Include" />
         <e p="chracterMove.cs" t="Include" />
+        <e p="chrecterCard.cs" t="Include" />
         <e p="cubeManager.cs" t="Include" />
         <e p="demo.txt" t="Include" />
         <e p="demo2.txt" t="Include" />
