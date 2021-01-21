@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class cubeManager : MonoBehaviour
 {
-    //后期会用resource替换处理
+    //用resource替换处理，暂时先硬编码
     public List<GameObject> cubeList;
 
 }

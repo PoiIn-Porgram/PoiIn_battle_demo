@@ -6,7 +6,7 @@ using UnityEngine;
 public class sinarioController : MonoBehaviour
 {
     /// <summary>
-    /// 用于播放影响
+    /// 用于播放台词
     /// </summary>
     private textFileLoader _textFile;
     public int index = 0;

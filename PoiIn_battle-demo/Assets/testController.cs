@@ -8,7 +8,7 @@ public class testController : MonoBehaviour
 {
     
     /// <summary>
-    /// 用于展示所有的函数接口
+    /// 用于展示所有的函数接口，脚手架，可以参考引用方式
     /// </summary>
     
     private chracterMove _chracterMove;

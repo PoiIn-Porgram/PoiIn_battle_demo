@@ -19,14 +19,14 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/indexLayout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/indexLayout.xml" afterDir="false" />
+    <list default="true" id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="add some reference">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cameraTrack.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cameraTrack.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/changeLine.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/changeLine.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/chracterMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracterMove.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/cubeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cubeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/loadMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/loadMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/sinarioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sinarioController.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/testController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testMap.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/textFileLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/textFileLoader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -63,19 +63,19 @@
         <option value="$PROJECT_DIR$/Assets/enemyStatus.cs" />
         <option value="$PROJECT_DIR$/Assets/enemyAI.cs" />
         <option value="$PROJECT_DIR$/Assets/eventSinario.cs" />
-        <option value="$PROJECT_DIR$/Assets/chracterMove.cs" />
         <option value="$PROJECT_DIR$/Assets/statusList.cs" />
-        <option value="$PROJECT_DIR$/Assets/loadMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/testMap.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityPackages/JsonNetSample/JsonNetSample.cs" />
         <option value="$PROJECT_DIR$/Assets/chrecterCard.cs" />
-        <option value="$PROJECT_DIR$/Assets/castSpells.cs" />
-        <option value="$PROJECT_DIR$/Assets/cubeManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/testController.cs" />
-        <option value="$PROJECT_DIR$/Assets/textFileLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/cameraTrack.cs" />
-        <option value="$PROJECT_DIR$/Assets/sinarioController.cs" />
         <option value="$PROJECT_DIR$/Assets/changeLine.cs" />
+        <option value="$PROJECT_DIR$/Assets/loadMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/chracterMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/castSpells.cs" />
+        <option value="$PROJECT_DIR$/Assets/testMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/cubeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/textFileLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/sinarioController.cs" />
+        <option value="$PROJECT_DIR$/Assets/testController.cs" />
       </list>
     </option>
   </component>
@@ -130,8 +130,16 @@
       <workItem from="1611121935319" duration="6760000" />
       <workItem from="1611153846292" duration="8026000" />
       <workItem from="1611194668659" duration="4713000" />
-      <workItem from="1611215357300" duration="4610000" />
+      <workItem from="1611215357300" duration="5285000" />
     </task>
+    <task id="LOCAL-00001" summary="add some reference">
+      <created>1611221123871</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1611221123871</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -153,6 +161,8 @@
   </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="add some reference" />
+    <option name="LAST_COMMIT_MESSAGE" value="add some reference" />
   </component>
   <component name="WindowStateProjectService">
     <state x="184" y="0" key="SettingsEditor" timestamp="1611037436132">
@@ -163,5 +173,13 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1611026729524" />
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2" timestamp="1611221132558">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="275" y="96" key="Vcs.Push.Dialog.v2/0.0.1366.728@0.0.1366.728" timestamp="1611221132558" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1611221195412">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1611221195412" />
   </component>
 </project>

@@ -36,6 +36,7 @@ public class chracterMove : MonoBehaviour
 
     IEnumerator lerpMove()
     {
+        //协程中，使用插值制造相机的移动动画
         this.transform.position = Vector3.Lerp(transform.position, targetPosition, lerpFactor);
         cam.transform.position = Vector3.Lerp(cam.transform.position, this.transform.position + reletiveDistance, lerpFactor);
         if (Vector3.SqrMagnitude(targetPosition -  this.transform.position)<0.005f&&
@@ -67,6 +68,7 @@ public class chracterMove : MonoBehaviour
 
     public void  moveTo(direction _direction)
     {
+        //判断移动方向和移动的合法性。可以进一步封装
         switch (_direction)
         {
             case direction.front:

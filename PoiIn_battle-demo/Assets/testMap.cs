@@ -12,7 +12,8 @@ public class testMap : MonoBehaviour
 	
 	public Dictionary<Vector3Int, int> savedBlocks = new Dictionary<Vector3Int, int>();
 	/// <summary>
-	/// 获取存档地图的总接口
+	/// 获取存档地图的总接口，使用了minijson解析器
+	/// 提供了测试地图的生成函数，后续等待开发者工具的开发
 	/// </summary>
 	/// <returns></returns>
 	public Dictionary<Vector3Int, int> getSavedBlocks()
