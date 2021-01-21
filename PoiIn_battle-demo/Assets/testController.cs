@@ -6,6 +6,11 @@ using UnityEngine.UI;
 
 public class testController : MonoBehaviour
 {
+    
+    /// <summary>
+    /// 用于展示所有的函数接口
+    /// </summary>
+    
     private chracterMove _chracterMove;
     private dice _dice;
     private sinarioController _sinarioController;

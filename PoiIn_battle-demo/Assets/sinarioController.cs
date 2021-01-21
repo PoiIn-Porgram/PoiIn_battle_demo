@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class sinarioController : MonoBehaviour
 {
+    /// <summary>
+    /// 用于播放影响
+    /// </summary>
     private textFileLoader _textFile;
     public int index = 0;
     private changeName _changeName;
@@ -31,7 +34,8 @@ public class sinarioController : MonoBehaviour
                 nextSinario();
                 break;
             case "N":
-                _changeName._text.text = "";
+                _changeLine.changeLineTo("");
+                //_changeName._text.text = "";等效，但是减少全局变量
                 _changeLine._text.text = thisSinario[1];
                 index++;
                 break;

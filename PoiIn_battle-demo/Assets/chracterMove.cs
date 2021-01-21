@@ -5,10 +5,16 @@ using UnityEngine;
 
 public class chracterMove : MonoBehaviour
 {
+    /// <summary>
+    /// 提供移动函数的接口
+    /// </summary>
     private loadMap _loadMap;
     private int chracterHeight = 1;
     private Vector3Int targetPosition,thisPosition = new Vector3Int(0,0,0);
     public float lerpFactor = 0.1f;
+    /// <summary>
+    /// 考虑减少硬编码
+    /// </summary>
     public enum direction
     {
         front,

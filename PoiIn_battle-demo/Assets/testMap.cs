@@ -9,8 +9,17 @@ using System.Linq;
 [System.Serializable]
 public class testMap : MonoBehaviour
 {
-	public Dictionary<Vector3Int, int> savedBlocks = new Dictionary<Vector3Int, int>();
 	
+	public Dictionary<Vector3Int, int> savedBlocks = new Dictionary<Vector3Int, int>();
+	/// <summary>
+	/// 获取存档地图的总接口
+	/// </summary>
+	/// <returns></returns>
+	public Dictionary<Vector3Int, int> getSavedBlocks()
+	{
+		LoadData();
+		return savedBlocks;
+	}
 	public void LoadData()
 	{
 		JSON resJson = new JSON();
