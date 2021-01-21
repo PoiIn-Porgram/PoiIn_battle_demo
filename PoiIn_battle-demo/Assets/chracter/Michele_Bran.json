@@ -13,24 +13,24 @@
             "name":"粘滞地面",
             "description":"使物体表面502化。可黏住敌人的脚，使其不可移动",
             "Launching_conditions":[
-                "SP>20",
-                "AP>5"
+                "SP:>:20",
+                "AP:<:5"
             ]
         },
         {
             "name":"圣光之吻",
             "description":"身体能力小幅度提升，五官更加敏锐",
             "Launching_conditions":[   
-                    "AC>20"
+                    "AC:>:20"
             ]
         },
         {
             "name":"麻痹玩笑",
             "description":"指尖冒出魔法电火，可使魔法、机械设备瘫痪",
             "Launching_conditions":[
-                "AC>40",
-                "SP>40",
-                "SL>20"
+                "AC:>:40",
+                "SP:>:40",
+                "SL:>:20"
             ]
         }
     ],

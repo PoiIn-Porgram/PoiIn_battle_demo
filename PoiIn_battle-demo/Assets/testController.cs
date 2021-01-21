@@ -10,12 +10,14 @@ public class testController : MonoBehaviour
     private dice _dice;
     private sinarioController _sinarioController;
     private cameraTrack _cameraTrack;
+    private chrecterCard _card;
     private void Start()
     {
         _chracterMove = FindObjectOfType<chracterMove>();
         _dice = FindObjectOfType<dice>();
         _sinarioController = FindObjectOfType<sinarioController>();
         _cameraTrack = FindObjectOfType<cameraTrack>();
+        _card = FindObjectOfType<chrecterCard>();
     }
 
     private void OnGUI()
@@ -53,6 +55,14 @@ public class testController : MonoBehaviour
         if (GUILayout.Button("rotate"))
         {
            _cameraTrack.RotateTheCamera(1);
+        }
+
+        foreach (chrecterCard.spells spell in _card.spelleList)
+        {
+            if (GUILayout.Button(spell.spellName))
+            {
+                Debug.Log(spell.description);
+            }
         }
     }
 }

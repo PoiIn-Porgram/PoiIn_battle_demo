@@ -9,28 +9,25 @@ using UnityEngine.UI;
 using LitJson;
 public class chrecterCard : MonoBehaviour
 {
-    public string name;
-    public List<string> TestLcList;
+    public string chracterName;
     public Dictionary<string, int> status;
-    public string[] testLC;
+    [Serializable]
     public struct spells
     {
-        public Dictionary<string, string> description ;
-        public Dictionary<string, List<string>> Launching_Conditions;
-
-        public string getDescription(string name)
-        {
-            return description["name"];
-        }
+        public string spellName;
+        public string description;
+        public Dictionary<string, int> Launching_Conditions;
     }
+    
+    public List<spells> spelleList = new List<spells>();
+   
     public spells mySpells;
 
     private void Start()
     {
         status = new Dictionary<string, int>();
         mySpells = new spells();
-        mySpells.description = new Dictionary<string, string>();
-        mySpells.Launching_Conditions = new Dictionary<string, List<string>>();
+
         loadJson();
     }
 
@@ -39,18 +36,55 @@ public class chrecterCard : MonoBehaviour
         JsonData jd = new JsonData();
         jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/Michele_Bran.json"));
         
-        name = jd["name"].ToString();
+        chracterName = jd["name"].ToString();
         
         JsonData jdItem = new JsonData();
         jdItem = jd["spells"];
         foreach (JsonData data in jdItem)
         {
-            List<string> curList = new List<string>();
+            mySpells = new spells();
+            mySpells.Launching_Conditions = new Dictionary<string, int>();
+            mySpells.spellName = data["name"].ToString();
+            mySpells.description = data["description"].ToString();
             foreach (JsonData jsonData in data["Launching_conditions"])
             {
-                TestLcList.Add(jsonData.ToString());
+                mySpells.Launching_Conditions.Add(StatusParse(jsonData.ToString(),cmd.status),
+                                                                    Convert.ToInt32(StatusParse(jsonData.ToString(),cmd.value)));
             }
+            spelleList.Add(mySpells);
+        }
+    }
+    public enum cmd
+    {
+        status,
+        procativity,
+        value
+    }
+ 
+    private string StatusParse(string str,cmd _cmd)
+    {
+        string[] s = str.Split(':');
+        switch (_cmd)
+        {
+            case cmd.status:
+                return s[0];
+                break;
+            case cmd.procativity:
+                return s[1];
+                break;
+            case cmd.value:
+                if (s[1] == "<")
+                {
+                    s[2] = "-" + s[2];
+                }
+                return s[2];
+            break;
+            default:
+                return null;
         }
     }
 
+
+    
+    
 }
