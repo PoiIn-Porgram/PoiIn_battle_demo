@@ -29,6 +29,10 @@ public class testMap : MonoBehaviour
 
 		GetJsonData(ref resJson, "testMap");
 
+		foreach (KeyValuePair<Vector3Int,int> keyValuePair in savedBlocks)
+		{
+			Debug.Log(keyValuePair.Key);
+		}
 	}
 	public void GetJsonData(ref JSON resJson,string key)
 	{
