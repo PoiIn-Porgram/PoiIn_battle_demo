@@ -9,14 +9,7 @@
         "AP":10
     },
     "spells": [
-        {
-            "name":"粘滞地面",
-            "description":"使物体表面502化。可黏住敌人的脚，使其不可移动",
-            "Launching_conditions":[
-                "SP:>:20",
-                "AP:<:5"
-            ]
-        },
+       
         {
             "name":"圣光之吻",
             "description":"身体能力小幅度提升，五官更加敏锐",

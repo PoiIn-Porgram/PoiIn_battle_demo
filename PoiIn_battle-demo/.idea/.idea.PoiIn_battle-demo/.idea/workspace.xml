@@ -21,13 +21,6 @@
   <component name="ChangeListManager">
     <list default="true" id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="add some reference">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/chracterMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracterMove.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/cubeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cubeManager.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/loadMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/loadMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/sinarioController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/sinarioController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testMap.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/textFileLoader.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/textFileLoader.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,8 +67,8 @@
         <option value="$PROJECT_DIR$/Assets/testMap.cs" />
         <option value="$PROJECT_DIR$/Assets/cubeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/textFileLoader.cs" />
-        <option value="$PROJECT_DIR$/Assets/sinarioController.cs" />
         <option value="$PROJECT_DIR$/Assets/testController.cs" />
+        <option value="$PROJECT_DIR$/Assets/sinarioController.cs" />
       </list>
     </option>
   </component>
@@ -130,7 +123,7 @@
       <workItem from="1611121935319" duration="6760000" />
       <workItem from="1611153846292" duration="8026000" />
       <workItem from="1611194668659" duration="4713000" />
-      <workItem from="1611215357300" duration="5285000" />
+      <workItem from="1611215357300" duration="6482000" />
     </task>
     <task id="LOCAL-00001" summary="add some reference">
       <created>1611221123871</created>
