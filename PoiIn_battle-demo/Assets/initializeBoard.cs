@@ -7,6 +7,7 @@ public class initializeBoard : MonoBehaviour
 {
     private cubeManager _cubeManager;
     private loadMap _loadMap;
+    private int blockIndex = 0;
     public struct blockCursor
     {
         public Vector3Int position;
@@ -45,8 +46,14 @@ public class initializeBoard : MonoBehaviour
         thisBlock = Instantiate(_cubeManager.cubeList[thisBlockCursor.blockStyle]);
         thisBlock.SetActive(true);
         thisBlock.transform.SetParent(this.transform);
-        thisBlock.transform.position = thisBlockCursor.position+new Vector3(0,0.32f,0);
-        
-
+        //thisBlock.transform.position = thisBlockCursor.position;
+        thisBlock.transform.position = get2Dposition(thisBlockCursor.position);
+        blockIndex++;
+    }
+    public Vector3 get2Dposition(Vector3 _3Dposition)
+    {
+        return new Vector3((_3Dposition.x-_3Dposition.z)*0.3f,
+            (_3Dposition.z+_3Dposition.x)*0.15f,
+            _3Dposition.z+_3Dposition.x);
     }
 }

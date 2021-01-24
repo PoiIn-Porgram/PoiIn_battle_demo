@@ -20,12 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../Test2/.idea/.idea.Test2/.idea/contentModel.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../Test2/.idea/.idea.Test2/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/contentModel.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/chracter/Michele_Bran.json" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracter/Michele_Bran.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/chrecterCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chrecterCard.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/testController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/chracter/Sprite-0001_reverse_0.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracter/Sprite-0001_reverse_0.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/chracterMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracterMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/cubeManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/cubeManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/enemyAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/enemyAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/initializeBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/initializeBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testMap.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,6 +46,7 @@
     <setting file="file://$PROJECT_DIR$/Assets/eventSinario.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/cubeManager.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/chracterMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/chracter2Dposition.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/changeLine.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/dice.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/enemyAI.cs" root0="FORCE_HIGHLIGHTING" />
@@ -54,26 +60,27 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/Assets/saveManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/cubeManager.cs" />
         <option value="$PROJECT_DIR$/Assets/dice.cs" />
         <option value="$PROJECT_DIR$/Assets/galgameStyleDialogue.cs" />
         <option value="$PROJECT_DIR$/Assets/textFileLoader.cs" />
         <option value="$PROJECT_DIR$/Assets/changeName.cs" />
         <option value="$PROJECT_DIR$/Assets/changeLine.cs" />
         <option value="$PROJECT_DIR$/Assets/sinarioController.cs" />
-        <option value="$PROJECT_DIR$/Assets/initializeBoard.cs" />
         <option value="$PROJECT_DIR$/Assets/enemyStatus.cs" />
-        <option value="$PROJECT_DIR$/Assets/enemyAI.cs" />
         <option value="$PROJECT_DIR$/Assets/eventSinario.cs" />
-        <option value="$PROJECT_DIR$/Assets/chracterMove.cs" />
         <option value="$PROJECT_DIR$/Assets/statusList.cs" />
         <option value="$PROJECT_DIR$/Assets/cameraTrack.cs" />
         <option value="$PROJECT_DIR$/Assets/loadMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/testMap.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityPackages/JsonNetSample/JsonNetSample.cs" />
         <option value="$PROJECT_DIR$/Assets/chrecterCard.cs" />
         <option value="$PROJECT_DIR$/Assets/testController.cs" />
         <option value="$PROJECT_DIR$/Assets/castSpells.cs" />
+        <option value="$PROJECT_DIR$/Assets/cubeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/testMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/chracterMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/chracter2Dposition.cs" />
+        <option value="$PROJECT_DIR$/Assets/initializeBoard.cs" />
+        <option value="$PROJECT_DIR$/Assets/enemyAI.cs" />
       </list>
     </option>
   </component>
@@ -128,6 +135,7 @@
       <workItem from="1611121935319" duration="6760000" />
       <workItem from="1611153846292" duration="8026000" />
       <workItem from="1611194668659" duration="4713000" />
+      <workItem from="1611495630929" duration="3413000" />
     </task>
     <servers />
   </component>
