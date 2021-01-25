@@ -5,16 +5,13 @@ using UnityEngine;
 
 public class chracterMove : MonoBehaviour
 {
-    /// <summary>
-    /// 提供移动函数的接口
-    /// </summary>
     private loadMap _loadMap;
     private int chracterHeight = 1;
-    private Vector3Int targetPosition,thisPosition = new Vector3Int(0,0,0);
+    private Vector3Int thisPosition = new Vector3Int(0,0,0);
+
+    public Vector3 _2Dposition = new Vector3Int(0,0,0),target2Dposition;
+
     public float lerpFactor = 0.1f;
-    /// <summary>
-    /// 考虑减少硬编码
-    /// </summary>
     public enum direction
     {
         front,
@@ -28,6 +25,7 @@ public class chracterMove : MonoBehaviour
     private eventSinario _eventSinario;
     private void Start()
     {
+        Debug.Log(thisPosition);
         _loadMap = FindObjectOfType<loadMap>();
          cam = GameObject.FindGameObjectWithTag("MainCamera");
          reletiveDistance = cam.GetComponent<cameraTrack>().cameraReletivePosition;
@@ -36,14 +34,13 @@ public class chracterMove : MonoBehaviour
 
     IEnumerator lerpMove()
     {
-        //协程中，使用插值制造相机的移动动画
-        this.transform.position = Vector3.Lerp(transform.position, targetPosition, lerpFactor);
+        this.transform.position = Vector3.Lerp(transform.position, target2Dposition, lerpFactor);
         cam.transform.position = Vector3.Lerp(cam.transform.position, this.transform.position + reletiveDistance, lerpFactor);
-        if (Vector3.SqrMagnitude(targetPosition -  this.transform.position)<0.005f&&
-            Vector3.SqrMagnitude(cam.transform.position - reletiveDistance - targetPosition)<0.00005f)
+        if (Vector3.SqrMagnitude(target2Dposition -  this.transform.position)<0.005f&&
+            Vector3.SqrMagnitude(cam.transform.position - reletiveDistance - target2Dposition)<0.00005f)
         {
-            this.transform.position = targetPosition;
-            cam.transform.position = reletiveDistance + targetPosition;
+            this.transform.position = target2Dposition;
+            cam.transform.position = reletiveDistance + target2Dposition;
             yield return 0;
         }
         else
@@ -68,46 +65,62 @@ public class chracterMove : MonoBehaviour
 
     public void  moveTo(direction _direction)
     {
-        //判断移动方向和移动的合法性。可以进一步封装
         switch (_direction)
         {
             case direction.front:
-                if (_loadMap._testMap.savedBlocks.ContainsKey(new Vector3Int(thisPosition.x,
-                                                                                thisPosition.y,
-                                                                                thisPosition.z + 1)))
-                    thisPosition.z += 1;
-                
-                targetPosition = thisPosition + new Vector3Int(0,chracterHeight,0);
-                _eventSinario.checkSinario(thisPosition);
-                StartCoroutine(lerpMove());
+                if (_loadMap._testMap.savedBlocks.ContainsKey(new Vector3Int(thisPosition.x, thisPosition.y, thisPosition.z + 1)))
+                {
+                    thisPosition = new Vector3Int(thisPosition.x, thisPosition.y,thisPosition.z + 1);
+                    Debug.Log(thisPosition);
+                    _eventSinario.checkSinario(thisPosition);
+                    target2Dposition = transform.position + new Vector3(-0.3f, 0.15f, 0);
+                    StartCoroutine(lerpMove());
+                }
+
                 break;
             case direction.left:
                 if (_loadMap._testMap.savedBlocks.ContainsKey(new Vector3Int(thisPosition.x - 1,
                     thisPosition.y,
-                    thisPosition.z )))
-                    thisPosition.x -= 1;
-                targetPosition = thisPosition + new Vector3Int(0,chracterHeight,0);
-                _eventSinario.checkSinario(thisPosition);
-                StartCoroutine(lerpMove());
+                    thisPosition.z)))
+                {
+
+                    thisPosition = new Vector3Int(thisPosition.x - 1,
+                        thisPosition.y,
+                        thisPosition.z);
+                    target2Dposition = transform.position + new Vector3(-0.3f, -0.15f, 0);
+                    _eventSinario.checkSinario(thisPosition);
+                    StartCoroutine(lerpMove());
+                }
+
                 break;
             case direction.back:
                 if (_loadMap._testMap.savedBlocks.ContainsKey(new Vector3Int(thisPosition.x,
                     thisPosition.y,
                     thisPosition.z - 1)))
-                    thisPosition.z -= 1;
-                targetPosition = thisPosition + new Vector3Int(0,chracterHeight,0);
-                _eventSinario.checkSinario(thisPosition);
-                StartCoroutine(lerpMove());
+                {
+
+                    thisPosition = new Vector3Int(thisPosition.x,
+                        thisPosition.y,
+                        thisPosition.z - 1);
+                    target2Dposition = transform.position + new Vector3(0.3f, -0.15f, 0);
+                    _eventSinario.checkSinario(thisPosition);
+                    StartCoroutine(lerpMove());
+                }
+
                 break;
             case direction.right:
                 if (_loadMap._testMap.savedBlocks.ContainsKey(new Vector3Int(thisPosition.x + 1,
                     thisPosition.y,
-                    thisPosition.z )))
-                    thisPosition.x += 1;
-                targetPosition = thisPosition + new Vector3Int(0,chracterHeight,0);
-                print(targetPosition);
-                _eventSinario.checkSinario(thisPosition);
-                StartCoroutine(lerpMove());
+                    thisPosition.z)))
+                {
+                    thisPosition = new Vector3Int(thisPosition.x + 1,
+                        thisPosition.y,
+                        thisPosition.z);
+                    target2Dposition = transform.position + new Vector3(0.3f, 0.15f, 0);
+                    _eventSinario.checkSinario(thisPosition);
+                    StartCoroutine(lerpMove());
+                }
+
                 break;
         }
     }
@@ -117,4 +130,5 @@ public class chracterMove : MonoBehaviour
         Direction = _direction;
         confirm = true;
     }
+    
 }
