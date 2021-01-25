@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/Assets/chracterMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracterMove.cs" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/JSON.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/chrecterCard.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/eventSinario.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/cubeManager.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/chracterMove.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/chracter2Dposition.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/changeLine.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/dice.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/enemyAI.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/castSpells.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/CDA329D8-E6EC-4550-9F6D-8EEF70A1ABBA/0b/52503073/StringReader.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/testController.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/cameraTrack.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/enemyStatus.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="IdeDocumentHistory">
+    <option name="CHANGED_PATHS">
+      <list>
+        <option value="$PROJECT_DIR$/Assets/saveManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/dice.cs" />
+        <option value="$PROJECT_DIR$/Assets/galgameStyleDialogue.cs" />
+        <option value="$PROJECT_DIR$/Assets/textFileLoader.cs" />
+        <option value="$PROJECT_DIR$/Assets/changeName.cs" />
+        <option value="$PROJECT_DIR$/Assets/changeLine.cs" />
+        <option value="$PROJECT_DIR$/Assets/sinarioController.cs" />
+        <option value="$PROJECT_DIR$/Assets/enemyStatus.cs" />
+        <option value="$PROJECT_DIR$/Assets/eventSinario.cs" />
+        <option value="$PROJECT_DIR$/Assets/statusList.cs" />
+        <option value="$PROJECT_DIR$/Assets/cameraTrack.cs" />
+        <option value="$PROJECT_DIR$/Assets/loadMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/UnityPackages/JsonNetSample/JsonNetSample.cs" />
+        <option value="$PROJECT_DIR$/Assets/chrecterCard.cs" />
+        <option value="$PROJECT_DIR$/Assets/castSpells.cs" />
+        <option value="$PROJECT_DIR$/Assets/cubeManager.cs" />
+        <option value="$PROJECT_DIR$/Assets/testMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/chracter2Dposition.cs" />
+        <option value="$PROJECT_DIR$/Assets/initializeBoard.cs" />
+        <option value="$PROJECT_DIR$/Assets/enemyAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/testController.cs" />
+        <option value="$PROJECT_DIR$/Assets/chracterMove.cs" />
+      </list>
+    </option>
+  </component>
+  <component name="ProjectId" id="1nBpCWYpyzfx67k7Fqc6QN3Bx7V" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="Discover.Launch.Via.Unity" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="ReSpellerSettingsId" />
+    <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunManager" selected="Attach to Unity Editor.Attach to Unity Editor">
+    <configuration name="Attach to Unity Editor &amp; Play" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="selectedOptions">
+        <set />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="" />
+      <created>1610873215156</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610873215156</updated>
+      <workItem from="1610873219560" duration="2098000" />
+      <workItem from="1610881997953" duration="6066000" />
+      <workItem from="1610947954627" duration="8016000" />
+      <workItem from="1610966831639" duration="5971000" />
+      <workItem from="1610980495638" duration="6400000" />
+      <workItem from="1611020885665" duration="5592000" />
+      <workItem from="1611036642321" duration="3932000" />
+      <workItem from="1611121935319" duration="6760000" />
+      <workItem from="1611153846292" duration="8026000" />
+      <workItem from="1611194668659" duration="4713000" />
+      <workItem from="1611495630929" duration="3413000" />
+      <workItem from="1611548058831" duration="1068000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="EditMode" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="fix" />
+    <MESSAGE value="Create 游戏编程模式.epub" />
+    <option name="LAST_COMMIT_MESSAGE" value="Create 游戏编程模式.epub" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="184" y="0" key="SettingsEditor" timestamp="1611037436132">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="184" y="0" key="SettingsEditor/0.0.1366.728@0.0.1366.728" timestamp="1611037436132" />
+    <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog" timestamp="1611026729524">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="92" y="92" width="1182" height="544" key="VCS.FileHistoryDialog/0.0.1366.728@0.0.1366.728" timestamp="1611026729524" />
+  </component>
+</project>
