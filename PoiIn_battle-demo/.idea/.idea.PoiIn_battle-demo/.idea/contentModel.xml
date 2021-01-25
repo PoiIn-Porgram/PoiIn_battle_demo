@@ -14,8 +14,9 @@
         <e p="chracterMove.cs" t="Include" />
         <e p="chrecterCard.cs" t="Include" />
         <e p="cubeManager.cs" t="Include" />
-        <e p="demo.txt" t="Include" />
-        <e p="demo2.txt" t="Include" />
+        <e p="cubes" t="Include">
+          <e p="cubesId.txt" t="Include" />
+        </e>
         <e p="dice.cs" t="Include" />
         <e p="enemyAI.cs" t="Include" />
         <e p="enemyStatus.cs" t="Include" />

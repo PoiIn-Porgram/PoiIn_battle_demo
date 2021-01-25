@@ -111,4 +111,10 @@ public class chracterMove : MonoBehaviour
                 break;
         }
     }
+
+    public void chracterMoveTo(direction _direction)
+    {
+        Direction = _direction;
+        confirm = true;
+    }
 }
