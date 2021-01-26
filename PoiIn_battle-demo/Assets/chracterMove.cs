@@ -7,7 +7,7 @@ public class chracterMove : MonoBehaviour
 {
     private loadMap _loadMap;
     private int chracterHeight = 1;
-    private Vector3Int thisPosition = new Vector3Int(0,0,0);
+    public Vector3Int thisPosition = new Vector3Int(0,0,0);
 
     public Vector3 _2Dposition = new Vector3Int(0,0,0),target2Dposition;
 
@@ -124,7 +124,6 @@ public class chracterMove : MonoBehaviour
                 break;
         }
     }
-
     public void chracterMoveTo(direction _direction)
     {
         Direction = _direction;

@@ -29,18 +29,22 @@ public class testController : MonoBehaviour
     {
         if (GUILayout.Button("W"))
         {
+            Debug.Log(_chracterMove.thisPosition);
            _chracterMove.chracterMoveTo(chracterMove.direction.front);
         }
         if (GUILayout.Button("A"))
         {
+            Debug.Log(_chracterMove.thisPosition);
             _chracterMove.chracterMoveTo(chracterMove.direction.left);
         }
         if (GUILayout.Button("S"))
         {
+            Debug.Log(_chracterMove.thisPosition);
             _chracterMove.chracterMoveTo(chracterMove.direction.back);
         }
         if (GUILayout.Button("D"))
         {
+            Debug.Log(_chracterMove.thisPosition);
             _chracterMove.chracterMoveTo(chracterMove.direction.right);
         }
 
