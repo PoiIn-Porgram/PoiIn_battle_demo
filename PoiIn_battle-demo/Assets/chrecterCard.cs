@@ -9,8 +9,11 @@ using UnityEngine.UI;
 using LitJson;
 public class chrecterCard : MonoBehaviour
 {
+    //该角色的名字
     public string chracterName;
+    //该角色的属性值
     public Dictionary<string, int> status;
+    //法术的结构体
     [Serializable]
     public struct spells
     {
@@ -18,23 +21,32 @@ public class chrecterCard : MonoBehaviour
         public string description;
         public Dictionary<string, int> Launching_Conditions;
     }
-    
+    //所有法术的链表
     public List<spells> spelleList = new List<spells>();
-   
-    public spells mySpells;
+   //中间变量
+    private spells mySpells;
+    //背包物品（持ち物）结构体
+    public struct motimono
+    {
+        public string name;
+        public string description;
+    }
+    //背包物品链表
+    public List<motimono> Motimonos;
 
     private void Start()
     {
         status = new Dictionary<string, int>();
         mySpells = new spells();
-
+        Motimonos = new List<motimono>();
         loadJson();
     }
 
     public void loadJson()
     {
         JsonData jd = new JsonData();
-        jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/Michele_Bran.json"));
+        //填入人物卡所在的文件夹位置
+        jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/mixieerBulang.json"));
         
         chracterName = jd["name"].ToString();
         
@@ -53,6 +65,19 @@ public class chrecterCard : MonoBehaviour
             }
             spelleList.Add(mySpells);
         }
+
+        motimono myMotimono = new motimono();
+        jdItem = new JsonData();
+        jdItem = jd["motimono"];
+        foreach (JsonData jsonData in jdItem)
+        {
+            myMotimono = new motimono();
+            myMotimono.name = jsonData["name"].ToString();
+            myMotimono.description = jsonData["description"].ToString();
+            Motimonos.Add(myMotimono);
+        }
+
+        
     }
     public enum cmd
     {

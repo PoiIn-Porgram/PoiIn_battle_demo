@@ -29,7 +29,6 @@
         <e p="eventSinario.cs" t="Include" />
         <e p="initializeBoard.cs" t="Include" />
         <e p="JSON.cs" t="Include" />
-        <e p="loadMap.cs" t="Include" />
         <e p="sinarioController.cs" t="Include" />
         <e p="testController.cs" t="Include" />
         <e p="testMap.cs" t="Include" />

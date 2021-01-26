@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,31 +17,49 @@ public class testController : MonoBehaviour
     private sinarioController _sinarioController;
     private cameraTrack _cameraTrack;
     private chrecterCard _card;
+    private testMap _testMap;
+    private void Awake()
+    {
+        _testMap = FindObjectOfType<testMap>();
+        _testMap.LoadData();
+    }
+
     private void Start()
     {
+        //人物移动脚本
         _chracterMove = FindObjectOfType<chracterMove>();
+        //骰子
         _dice = FindObjectOfType<dice>();
+        //Gal风格脚本控制器
         _sinarioController = FindObjectOfType<sinarioController>();
+        //相机追踪脚本
         _cameraTrack = FindObjectOfType<cameraTrack>();
+        //人物卡
         _card = FindObjectOfType<chrecterCard>();
+        //地图存档读取器，在awake周期提前触发
+        
     }
 
     private void OnGUI()
     {
         if (GUILayout.Button("W"))
         {
+            Debug.Log(_chracterMove.thisPosition);
            _chracterMove.chracterMoveTo(chracterMove.direction.front);
         }
         if (GUILayout.Button("A"))
         {
+            Debug.Log(_chracterMove.thisPosition);
             _chracterMove.chracterMoveTo(chracterMove.direction.left);
         }
         if (GUILayout.Button("S"))
         {
+            Debug.Log(_chracterMove.thisPosition);
             _chracterMove.chracterMoveTo(chracterMove.direction.back);
         }
         if (GUILayout.Button("D"))
         {
+            Debug.Log(_chracterMove.thisPosition);
             _chracterMove.chracterMoveTo(chracterMove.direction.right);
         }
 
@@ -66,5 +85,13 @@ public class testController : MonoBehaviour
                 Debug.Log(spell.description);
             }
         }
+        if(GUILayout.Button("motimono"))
+        foreach (chrecterCard.motimono cardMotimono in _card.Motimonos)
+        {
+            Debug.Log(cardMotimono.name);
+            Debug.Log(cardMotimono.description);
+        }
+        
+        
     }
 }

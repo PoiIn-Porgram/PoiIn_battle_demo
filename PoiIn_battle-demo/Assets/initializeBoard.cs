@@ -5,22 +5,26 @@ using UnityEngine;
 
 public class initializeBoard : MonoBehaviour
 {
+    /// <summary>
+    /// 地图生成器
+    /// 从testMap脚本中获得存档中的地图数据，即地图的位置和该位置的砖块种类，然后自动生成
+    /// </summary>
     private cubeManager _cubeManager;
-    private loadMap _loadMap;
-    private int blockIndex = 0;
+    private testMap _testMap;
     public struct blockCursor
     {
         public Vector3Int position;
         public int blockStyle;
     }
     private List<blockCursor> BlockCursorsOnLoad;
+    
     private void Start()
     {
         BlockCursorsOnLoad = new List<blockCursor>();
         _cubeManager = GetComponent<cubeManager>();
-        _loadMap = FindObjectOfType<loadMap>();
+        _testMap = FindObjectOfType<testMap>();
         blockCursor _blockCursor;
-        foreach (KeyValuePair<Vector3Int,int> loadedBlock in _loadMap._testMap.savedBlocks)
+        foreach (KeyValuePair<Vector3Int,int> loadedBlock in _testMap.savedBlocks)
         {
             _blockCursor = new blockCursor();
             _blockCursor.position = loadedBlock.Key;
@@ -48,7 +52,6 @@ public class initializeBoard : MonoBehaviour
         thisBlock.transform.SetParent(this.transform);
         //thisBlock.transform.position = thisBlockCursor.position;
         thisBlock.transform.position = get2Dposition(thisBlockCursor.position);
-        blockIndex++;
     }
     public Vector3 get2Dposition(Vector3 _3Dposition)
     {

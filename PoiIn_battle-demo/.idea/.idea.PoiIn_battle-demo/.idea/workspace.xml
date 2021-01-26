@@ -19,7 +19,23 @@
     <select />
   </component>
   <component name="ChangeListManager">
+<<<<<<< HEAD
     <list default="true" id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="" />
+=======
+    <list default="true" id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/castSpells.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/castSpells.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/chracter2Dposition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracter2Dposition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/chracterMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracterMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/chrecterCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chrecterCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/initializeBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/initializeBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/loadMap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/loadMap.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testMap.cs" afterDir="false" />
+    </list>
+>>>>>>> 1eff4d84ac688b0b04c46205f2910bcefed4eb45
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -58,19 +74,22 @@
         <option value="$PROJECT_DIR$/Assets/eventSinario.cs" />
         <option value="$PROJECT_DIR$/Assets/statusList.cs" />
         <option value="$PROJECT_DIR$/Assets/cameraTrack.cs" />
-        <option value="$PROJECT_DIR$/Assets/loadMap.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityPackages/JsonNetSample/JsonNetSample.cs" />
-        <option value="$PROJECT_DIR$/Assets/chrecterCard.cs" />
-        <option value="$PROJECT_DIR$/Assets/castSpells.cs" />
         <option value="$PROJECT_DIR$/Assets/cubeManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/testMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/chracter2Dposition.cs" />
-        <option value="$PROJECT_DIR$/Assets/initializeBoard.cs" />
         <option value="$PROJECT_DIR$/Assets/enemyAI.cs" />
+        <option value="$PROJECT_DIR$/Assets/loadMap.cs" />
         <option value="$PROJECT_DIR$/Assets/testController.cs" />
+        <option value="$PROJECT_DIR$/Assets/initializeBoard.cs" />
+        <option value="$PROJECT_DIR$/Assets/testMap.cs" />
         <option value="$PROJECT_DIR$/Assets/chracterMove.cs" />
+<<<<<<< HEAD
         <option value="$PROJECT_DIR$/Assets/backbag/Materials/TextureChange.cs" />
         <option value="$PROJECT_DIR$/Assets/back.cs" />
+=======
+        <option value="$PROJECT_DIR$/Assets/chracter2Dposition.cs" />
+        <option value="$PROJECT_DIR$/Assets/castSpells.cs" />
+        <option value="$PROJECT_DIR$/Assets/chrecterCard.cs" />
+>>>>>>> 1eff4d84ac688b0b04c46205f2910bcefed4eb45
       </list>
     </option>
   </component>
@@ -133,6 +152,7 @@
       <workItem from="1611194668659" duration="4713000" />
       <workItem from="1611495630929" duration="3413000" />
       <workItem from="1611548058831" duration="1068000" />
+<<<<<<< HEAD
       <workItem from="1611659039231" duration="940000" />
       <workItem from="1611660249598" duration="1415000" />
       <workItem from="1611668454938" duration="164000" />
@@ -140,6 +160,10 @@
       <workItem from="1611670011194" duration="2474000" />
       <workItem from="1611672549694" duration="1778000" />
       <workItem from="1611675258587" duration="11000" />
+=======
+      <workItem from="1611650699241" duration="691000" />
+      <workItem from="1611663346109" duration="5264000" />
+>>>>>>> 1eff4d84ac688b0b04c46205f2910bcefed4eb45
     </task>
     <servers />
   </component>

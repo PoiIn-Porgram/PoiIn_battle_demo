@@ -1,0 +1,77 @@
+{
+    "name": "祢歇尔·布兰",
+    "status":{
+        "HP":100,
+        "SP":28,
+        "PL":54,
+        "AC":100,
+        "SL":100,
+        "AP":10
+    },
+
+    "Skills_List":[
+        "spells",
+        "aimed_attack"
+    ],
+
+    "spells": [
+       
+        {
+            "name":"圣光之吻",
+            "description":"身体能力小幅度提升，五官更加敏锐",
+            "Launching_conditions":[   
+                    "AC:>:20"
+            ]
+        },
+        {
+            "name":"麻痹玩笑",
+            "description":"指尖冒出魔法电火，可使魔法、机械设备瘫痪",
+            "Launching_conditions":[
+                "AC:>:40",
+                "SP:>:40",
+                "SL:>:20"
+            ]
+        }
+    ],
+
+    "aimed_attack":{
+        "proficiency":28,
+        "binding_property":"PL",
+        "damage_determiniation":"$+PL$+Proficiency$-Dice"
+    },
+
+    "Speciality":[
+        {
+            "name":"心理学",
+            "description":""
+        },
+        {
+            "name":"侦查",
+            "description":""
+        },
+        {
+            "name":"图书馆使用",
+            "description":""
+        },
+        {
+            "name":"格斗",
+            "description":""
+        }
+    ],
+    "motimono":[
+        {
+            "name":"该时代下的通讯工具",
+            "description":"该时代下的通讯工具"
+        },
+        {
+            "name":"校园卡",
+            "description":"一张具有管理员权限的校园卡，表面似乎已经有些磨损了"
+        },
+        {
+            "name":"笔记本电脑",
+            "description":"ThinkPad X1 Carbon"
+        }
+    ]
+
+
+}
