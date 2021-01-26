@@ -2,12 +2,18 @@
     "name": "祢歇尔·布兰",
     "status":{
         "HP":100,
-        "SP":100,
-        "PL":100,
+        "SP":28,
+        "PL":54,
         "AC":100,
         "SL":100,
         "AP":10
     },
+
+    "Skills_List":[
+        "spells",
+        "aimed_attack"
+    ],
+
     "spells": [
        
         {
@@ -27,8 +33,30 @@
             ]
         }
     ],
-    "Speciality":[
 
+    "aimed_attack":{
+        "proficiency":28,
+        "binding_property":"PL",
+        "damage_determiniation":"$+PL$+Proficiency$-Dice"
+    },
+
+    "Speciality":[
+        {
+            "name":"心理学",
+            "description":""
+        },
+        {
+            "name":"侦查",
+            "description":""
+        },
+        {
+            "name":"图书馆使用",
+            "description":""
+        },
+        {
+            "name":"格斗",
+            "description":""
+        }
     ],
     "motimono":[
         {
@@ -44,4 +72,6 @@
             "description":"ThinkPad X1 Carbon"
         }
     ]
+
+
 }

@@ -1,0 +1,28 @@
+{
+    "name": "索尔·布鲁斯",
+    "status":{
+        "HP":100,
+        "SP":28,
+        "PL":54,
+        "AC":100,
+        "SL":38,
+        "AP":10
+    },
+
+    "motimono":[
+        {
+            "name":"该时代下的通讯工具",
+            "description":"该时代下的通讯工具"
+        },
+        {
+            "name":"纸巾",
+            "description":""
+        },
+        {
+            "name":"学生证",
+            "description":""
+        }
+    ]
+
+
+}

@@ -71,7 +71,7 @@ public class testController : MonoBehaviour
                 Debug.Log(spell.description);
             }
         }
-
+        if(GUILayout.Button("motimono"))
         foreach (chrecterCard.motimono cardMotimono in _card.Motimonos)
         {
             Debug.Log(cardMotimono.name);
