@@ -6,6 +6,7 @@ TagManager:
   tags:
   - enemySpawner
   - 2D_OBJ
+  - board
   layers:
   - Default
   - TransparentFX
