@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.EditorUtilities;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -70,5 +71,13 @@ public class testController : MonoBehaviour
                 Debug.Log(spell.description);
             }
         }
+
+        foreach (chrecterCard.motimono cardMotimono in _card.Motimonos)
+        {
+            Debug.Log(cardMotimono.name);
+            Debug.Log(cardMotimono.description);
+        }
+        
+        
     }
 }

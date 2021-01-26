@@ -21,13 +21,21 @@ public class chrecterCard : MonoBehaviour
     
     public List<spells> spelleList = new List<spells>();
    
-    public spells mySpells;
+    private spells mySpells;
+    
+    public struct motimono
+    {
+        public string name;
+        public string description;
+    }
+
+    public List<motimono> Motimonos;
 
     private void Start()
     {
         status = new Dictionary<string, int>();
         mySpells = new spells();
-
+        Motimonos = new List<motimono>();
         loadJson();
     }
 
@@ -53,6 +61,19 @@ public class chrecterCard : MonoBehaviour
             }
             spelleList.Add(mySpells);
         }
+
+        motimono myMotimono = new motimono();
+        jdItem = new JsonData();
+        jdItem = jd["motimono"];
+        foreach (JsonData jsonData in jdItem)
+        {
+            myMotimono = new motimono();
+            myMotimono.name = jsonData["name"].ToString();
+            myMotimono.description = jsonData["description"].ToString();
+            Motimonos.Add(myMotimono);
+        }
+
+        
     }
     public enum cmd
     {

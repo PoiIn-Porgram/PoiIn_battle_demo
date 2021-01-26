@@ -34,6 +34,14 @@
         {
             "name":"该时代下的通讯工具",
             "description":"该时代下的通讯工具"
+        },
+        {
+            "name":"校园卡",
+            "description":"一张具有管理员权限的校园卡，表面似乎已经有些磨损了"
+        },
+        {
+            "name":"笔记本电脑",
+            "description":"ThinkPad X1 Carbon"
         }
     ]
 }
