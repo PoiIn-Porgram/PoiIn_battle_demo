@@ -29,10 +29,7 @@ public class testMap : MonoBehaviour
 
 		GetJsonData(ref resJson, "testMap");
 
-		foreach (KeyValuePair<Vector3Int,int> keyValuePair in savedBlocks)
-		{
-			Debug.Log(keyValuePair.Key);
-		}
+
 	}
 	public void GetJsonData(ref JSON resJson,string key)
 	{
@@ -48,7 +45,11 @@ public class testMap : MonoBehaviour
 		string map = File.ReadAllText(Application.dataPath + "/testMap.json");
 		json.serialized = map;
 	}
-	
+	/// <summary>
+	/// 地图解析器
+	/// 将参数的地图字符串解析为对应的vector3Int和种类的enum枚举
+	/// </summary>
+	/// <param name="str"></param>
 	public  void Parse(string str)
 	{
 		str = str.Replace("(", "").Replace(")", "")

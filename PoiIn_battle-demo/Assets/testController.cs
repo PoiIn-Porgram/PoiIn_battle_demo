@@ -17,13 +17,27 @@ public class testController : MonoBehaviour
     private sinarioController _sinarioController;
     private cameraTrack _cameraTrack;
     private chrecterCard _card;
+    private testMap _testMap;
+    private void Awake()
+    {
+        _testMap = FindObjectOfType<testMap>();
+        _testMap.LoadData();
+    }
+
     private void Start()
     {
+        //人物移动脚本
         _chracterMove = FindObjectOfType<chracterMove>();
+        //骰子
         _dice = FindObjectOfType<dice>();
+        //Gal风格脚本控制器
         _sinarioController = FindObjectOfType<sinarioController>();
+        //相机追踪脚本
         _cameraTrack = FindObjectOfType<cameraTrack>();
+        //人物卡
         _card = FindObjectOfType<chrecterCard>();
+        //地图存档读取器，在awake周期提前触发
+        
     }
 
     private void OnGUI()

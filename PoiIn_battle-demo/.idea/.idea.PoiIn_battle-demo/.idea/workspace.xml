@@ -20,7 +20,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="c0bde560-36fb-45f9-a9e9-9c43c8be7505" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.PoiIn_battle-demo/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/castSpells.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/castSpells.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/chracter2Dposition.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracter2Dposition.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/chracterMove.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chracterMove.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/chrecterCard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/chrecterCard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/initializeBoard.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/initializeBoard.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/loadMap.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/loadMap.cs.meta" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/testController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/testMap.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/testMap.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,17 +70,17 @@
         <option value="$PROJECT_DIR$/Assets/eventSinario.cs" />
         <option value="$PROJECT_DIR$/Assets/statusList.cs" />
         <option value="$PROJECT_DIR$/Assets/cameraTrack.cs" />
-        <option value="$PROJECT_DIR$/Assets/loadMap.cs" />
         <option value="$PROJECT_DIR$/Assets/UnityPackages/JsonNetSample/JsonNetSample.cs" />
-        <option value="$PROJECT_DIR$/Assets/castSpells.cs" />
         <option value="$PROJECT_DIR$/Assets/cubeManager.cs" />
-        <option value="$PROJECT_DIR$/Assets/testMap.cs" />
-        <option value="$PROJECT_DIR$/Assets/chracter2Dposition.cs" />
-        <option value="$PROJECT_DIR$/Assets/initializeBoard.cs" />
         <option value="$PROJECT_DIR$/Assets/enemyAI.cs" />
-        <option value="$PROJECT_DIR$/Assets/chracterMove.cs" />
-        <option value="$PROJECT_DIR$/Assets/chrecterCard.cs" />
+        <option value="$PROJECT_DIR$/Assets/loadMap.cs" />
         <option value="$PROJECT_DIR$/Assets/testController.cs" />
+        <option value="$PROJECT_DIR$/Assets/initializeBoard.cs" />
+        <option value="$PROJECT_DIR$/Assets/testMap.cs" />
+        <option value="$PROJECT_DIR$/Assets/chracterMove.cs" />
+        <option value="$PROJECT_DIR$/Assets/chracter2Dposition.cs" />
+        <option value="$PROJECT_DIR$/Assets/castSpells.cs" />
+        <option value="$PROJECT_DIR$/Assets/chrecterCard.cs" />
       </list>
     </option>
   </component>
@@ -128,7 +138,7 @@
       <workItem from="1611495630929" duration="3413000" />
       <workItem from="1611548058831" duration="1068000" />
       <workItem from="1611650699241" duration="691000" />
-      <workItem from="1611663346109" duration="1906000" />
+      <workItem from="1611663346109" duration="5264000" />
     </task>
     <servers />
   </component>

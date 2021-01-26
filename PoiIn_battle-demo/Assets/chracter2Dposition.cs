@@ -4,6 +4,12 @@ using UnityEngine;
 
 public class chracter2Dposition : MonoBehaviour
 {
+    /// <summary>
+    /// 抽象坐标和真实坐标的转换函数
+    /// 目前这里给出的是真实坐标对虚拟坐标的转换
+    /// </summary>
+    /// <param name="_3Dposition"></param>
+    /// <returns></returns>
     public Vector3 get2Dposition(Vector3 _3Dposition)
     {
         return new Vector3((_3Dposition.x-_3Dposition.z)*0.3f,
