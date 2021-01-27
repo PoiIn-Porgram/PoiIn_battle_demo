@@ -15,7 +15,7 @@ public class chrecterCard : MonoBehaviour
     //该角色的名字
     public string chracterName;
     //该角色的属性值
-    public Dictionary<string, int> status;
+    public Dictionary<string, int> status = new Dictionary<string, int>();
     public List<Sprite> Sprites = new List<Sprite>();
     private Image image;
     //法术的结构体
@@ -49,11 +49,8 @@ public class chrecterCard : MonoBehaviour
         mySpells = new spells();
         Motimonos = new List<motimono>();
         loadJson();
-        //Debug.Log(damegeDeterminationParser(100, "aimed_attack"));
-        foreach (KeyValuePair<string,int> keyValuePair in status)
-        {
-            Debug.Log(keyValuePair.Key);
-        }
+        loadStatus();
+        Debug.Log(damegeDeterminationParser(100, "aimed_attack"));
     }
     private JsonData jd = new JsonData();
     public void loadJson()
@@ -184,10 +181,10 @@ public class chrecterCard : MonoBehaviour
 
             switch (instruction)
             {
-                case "dice":
+                case "Dice":
                     damage += (dice * factor);
                     break;
-                case "proficiency":
+                case "Proficiency":
                     int proficiency = Convert.ToInt32(jsonData["proficiency"].ToString());
                     damage += (proficiency*factor);
                     break;
@@ -198,5 +195,18 @@ public class chrecterCard : MonoBehaviour
             }
         }
         return damage;
+    }
+
+    public void loadStatus()
+    {
+        status = new Dictionary<string, int>();
+        JsonData jsonData = new JsonData();
+        jsonData = jd["status"];
+        status.Add("HP",Convert.ToInt32(jsonData["HP"].ToString()));
+        status.Add("SP",Convert.ToInt32(jsonData["SP"].ToString()));
+        status.Add("PL",Convert.ToInt32(jsonData["PL"].ToString()));
+        status.Add("AC",Convert.ToInt32(jsonData["AC"].ToString()));
+        status.Add("SL",Convert.ToInt32(jsonData["SL"].ToString()));
+        status.Add("AP",Convert.ToInt32(jsonData["AP"].ToString()));
     }
 }
