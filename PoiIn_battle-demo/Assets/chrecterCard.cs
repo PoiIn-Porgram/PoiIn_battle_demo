@@ -33,8 +33,11 @@ public class chrecterCard : MonoBehaviour
     //背包物品（持ち物）结构体
     public struct motimono
     {
+        //持有物名称
         public string name;
+        //持有物说明
         public string description;
+        //持有物图标sprite
         public Sprite icon;
     }
     //背包物品链表
@@ -146,5 +149,12 @@ public class chrecterCard : MonoBehaviour
         Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
         return sprite;
     }
-    
+    /// <summary>
+    /// 获得物品信息链表
+    /// </summary>
+    /// <returns></returns>
+    public List<motimono> GETMotimonos()
+    {
+        return Motimonos;
+    }
 }
