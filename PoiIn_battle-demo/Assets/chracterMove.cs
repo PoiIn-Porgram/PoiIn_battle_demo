@@ -37,6 +37,7 @@ public class chracterMove : MonoBehaviour
          reletiveDistance = cam.GetComponent<cameraTrack>().cameraReletivePosition;
          _eventSinario = FindObjectOfType<eventSinario>();
          _testMap = FindObjectOfType<testMap>();
+         formerposition = transform.position;//初始化起点
     }
 
     IEnumerator lerpMove()
@@ -70,8 +71,11 @@ public class chracterMove : MonoBehaviour
         
     }
 
+    private Vector3 formerposition;//理论起点
+
     public void  moveTo(direction _direction)
     {
+
         switch (_direction)
         {
             case direction.front:
@@ -81,7 +85,9 @@ public class chracterMove : MonoBehaviour
                     //抽象坐标向前＋1，虚拟坐标需要左移0.3，上移0.15，其他方向以此类推
                     thisPosition = new Vector3Int(thisPosition.x, thisPosition.y,thisPosition.z + 1);
                     _eventSinario.checkSinario(thisPosition);
-                    target2Dposition = transform.position + new Vector3(-0.3f, 0.15f, 0);
+                    target2Dposition = formerposition + new Vector3(-0.3f, 0.15f, 0);
+                    formerposition += new Vector3(-0.3f, 0.15f, 0);
+                    //修改前的target不精确，是人物移动中的位置加上相对位置
                     StartCoroutine(lerpMove());
                 }
                 break;
@@ -94,7 +100,8 @@ public class chracterMove : MonoBehaviour
                     thisPosition = new Vector3Int(thisPosition.x - 1,
                         thisPosition.y,
                         thisPosition.z);
-                    target2Dposition = transform.position + new Vector3(-0.3f, -0.15f, 0);
+                    target2Dposition = formerposition + new Vector3(-0.3f, -0.15f, 0);
+                    formerposition += new Vector3(-0.3f, -0.15f, 0);
                     _eventSinario.checkSinario(thisPosition);
                     StartCoroutine(lerpMove());
                 }
@@ -109,7 +116,8 @@ public class chracterMove : MonoBehaviour
                     thisPosition = new Vector3Int(thisPosition.x,
                         thisPosition.y,
                         thisPosition.z - 1);
-                    target2Dposition = transform.position + new Vector3(0.3f, -0.15f, 0);
+                    target2Dposition = formerposition + new Vector3(0.3f, -0.15f, 0);
+                    formerposition += new Vector3(0.3f, -0.15f, 0);
                     _eventSinario.checkSinario(thisPosition);
                     StartCoroutine(lerpMove());
                 }
@@ -123,7 +131,8 @@ public class chracterMove : MonoBehaviour
                     thisPosition = new Vector3Int(thisPosition.x + 1,
                         thisPosition.y,
                         thisPosition.z);
-                    target2Dposition = transform.position + new Vector3(0.3f, 0.15f, 0);
+                    target2Dposition = formerposition + new Vector3(0.3f, 0.15f, 0);
+                    formerposition += new Vector3(0.3f, 0.15f, 0);
                     _eventSinario.checkSinario(thisPosition);
                     StartCoroutine(lerpMove());
                 }
