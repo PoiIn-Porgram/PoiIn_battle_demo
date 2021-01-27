@@ -18,6 +18,7 @@ public class testController : MonoBehaviour
     private cameraTrack _cameraTrack;
     private chrecterCard _card;
     private testMap _testMap;
+    private characterDeath _death;
     private void Awake()
     {
         _testMap = FindObjectOfType<testMap>();
@@ -36,28 +37,30 @@ public class testController : MonoBehaviour
         _cameraTrack = FindObjectOfType<cameraTrack>();
         //人物卡
         _card = FindObjectOfType<chrecterCard>();
+        //死亡脚本
+        _death = FindObjectOfType<characterDeath>();
         //地图存档读取器，在awake周期提前触发
         
     }
 
     private void OnGUI()
     {
-        if (GUILayout.Button("W"))
+        if (GUILayout.Button("W")||Input.GetKeyDown(KeyCode.W))
         {
             Debug.Log(_chracterMove.thisPosition);
            _chracterMove.chracterMoveTo(chracterMove.direction.front);
         }
-        if (GUILayout.Button("A"))
+        if (GUILayout.Button("A")||Input.GetKeyDown(KeyCode.A))
         {
             Debug.Log(_chracterMove.thisPosition);
             _chracterMove.chracterMoveTo(chracterMove.direction.left);
         }
-        if (GUILayout.Button("S"))
+        if (GUILayout.Button("S")||Input.GetKeyDown(KeyCode.S))
         {
             Debug.Log(_chracterMove.thisPosition);
             _chracterMove.chracterMoveTo(chracterMove.direction.back);
         }
-        if (GUILayout.Button("D"))
+        if (GUILayout.Button("D")||Input.GetKeyDown(KeyCode.D))
         {
             Debug.Log(_chracterMove.thisPosition);
             _chracterMove.chracterMoveTo(chracterMove.direction.right);
@@ -92,6 +95,14 @@ public class testController : MonoBehaviour
             Debug.Log(cardMotimono.description);
         }
         
+        if (Input.GetKeyDown(KeyCode.K))
+        {
+            Debug.Log("dying");
+            // _death.toKill = _chracterMove.gameObject;
+            Debug.Log(_death.gameObject);
+            _death.kill();
+        }
+
         
     }
 }

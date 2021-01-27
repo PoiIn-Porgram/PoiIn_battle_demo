@@ -7,6 +7,7 @@ TagManager:
   - enemySpawner
   - 2D_OBJ
   - board
+  - particleSystem
   layers:
   - Default
   - TransparentFX
