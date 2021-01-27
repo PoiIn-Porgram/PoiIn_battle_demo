@@ -1252,6 +1252,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 453c29d62e395b9428c85510d109ac83, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  thisPosition: {x: 0, y: 0, z: 0}
   _2Dposition: {x: 0, y: 0, z: 0}
   target2Dposition: {x: 0, y: 0, z: 0}
   lerpFactor: 0.1
@@ -1270,10 +1271,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   chracterName: 
+  Sprites: []
   spelleList: []
-  mySpells:
-    spellName: 
-    description: 
 --- !u!114 &1316911470
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1331,7 +1330,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b3cfed1b055c5c449a8bb6f479a41a5e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _testMap: {fileID: 0}
 --- !u!114 &1359020088
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1550,7 +1548,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!199 &1819501125
 ParticleSystemRenderer:
   serializedVersion: 6

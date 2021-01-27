@@ -9,6 +9,8 @@ public class back : MonoBehaviour
     public bool active1;
     public bool active2;
     public bool[] boolArray = new bool[100];
+    
+    
     private void Start()
     {
         board = GameObject.FindGameObjectsWithTag("board");
