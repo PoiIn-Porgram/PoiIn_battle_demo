@@ -7,12 +7,17 @@ using System.IO;
 using System.Linq;
 using UnityEngine.UI;
 using LitJson;
+using System.Drawing;
+using UnityEditor;
+
 public class chrecterCard : MonoBehaviour
 {
     //该角色的名字
     public string chracterName;
     //该角色的属性值
-    public Dictionary<string, int> status;
+    public Dictionary<string, int> status = new Dictionary<string, int>();
+    public List<Sprite> Sprites = new List<Sprite>();
+    private Image image;
     //法术的结构体
     [Serializable]
     public struct spells
@@ -28,23 +33,29 @@ public class chrecterCard : MonoBehaviour
     //背包物品（持ち物）结构体
     public struct motimono
     {
+        //持有物名称
         public string name;
+        //持有物说明
         public string description;
+        //持有物图标sprite
+        public Sprite icon;
     }
     //背包物品链表
     public List<motimono> Motimonos;
-
+    
     private void Start()
     {
         status = new Dictionary<string, int>();
         mySpells = new spells();
         Motimonos = new List<motimono>();
         loadJson();
+        loadStatus();
+        Debug.Log(damegeDeterminationParser(100, "aimed_attack"));
     }
-
+    private JsonData jd = new JsonData();
     public void loadJson()
     {
-        JsonData jd = new JsonData();
+        
         //填入人物卡所在的文件夹位置
         jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/mixieerBulang.json"));
         
@@ -69,14 +80,19 @@ public class chrecterCard : MonoBehaviour
         motimono myMotimono = new motimono();
         jdItem = new JsonData();
         jdItem = jd["motimono"];
+
         foreach (JsonData jsonData in jdItem)
         {
             myMotimono = new motimono();
             myMotimono.name = jsonData["name"].ToString();
             myMotimono.description = jsonData["description"].ToString();
+            //Sprite sprite = AssetDatabase.LoadAssetAtPath<Sprite>(Application.dataPath+ "/testBackIcon/" + myMotimono.name + ".png");
+            //myMotimono.icon = Resources.Load<Sprite>(myMotimono.name + ".png");
+            myMotimono.icon = LoadByIO(myMotimono.name);
+            Sprites.Add(myMotimono.icon);
             Motimonos.Add(myMotimono);
         }
-
+        
         
     }
     public enum cmd
@@ -107,9 +123,90 @@ public class chrecterCard : MonoBehaviour
             default:
                 return null;
         }
+        
+    }
+    /// <summary>
+    /// 以IO方式进行加载
+    /// </summary>
+    private Sprite LoadByIO(string iconName)
+    {
+        //创建文件读取流
+        FileStream fileStream = new FileStream(Application.dataPath+ "/testBackIcon/" + iconName + ".png", FileMode.Open, FileAccess.Read);
+        fileStream.Seek(0, SeekOrigin.Begin);
+        //创建文件长度缓冲区
+        byte[] bytes = new byte[fileStream.Length];
+        //读取文件
+        fileStream.Read(bytes, 0, (int)fileStream.Length);
+        //释放文件读取流
+        fileStream.Close();
+        fileStream.Dispose();
+        fileStream = null;
+        //创建Texture
+        int width = 80;
+        int height = 80;
+        Texture2D texture = new Texture2D(width, height);
+        texture.LoadImage(bytes);
+
+        //创建Sprite
+        Sprite sprite = Sprite.Create(texture, new Rect(0, 0, texture.width, texture.height), new Vector2(0.5f, 0.5f));
+        return sprite;
+    }
+    /// <summary>
+    /// 获得物品信息链表
+    /// </summary>
+    /// <returns></returns>
+    public List<motimono> GETMotimonos()
+    {
+        return Motimonos;
     }
 
+    public int damegeDeterminationParser(int dice,string skillName)
+    {
+        int damage = 0;
+        int factor = 1;
+        JsonData jsonData = jd[skillName];
+        string damageFormula = jsonData["damage_determiniation"].ToString();
+        string[] damageSection = damageFormula.Split('$');
+        foreach (string str in damageSection)
+        {
+            if (str[0] == '-')
+            {
+                factor = -1;
+            }
+            else
+            {
+                factor = 1;
+            }
+            string instruction = str.Substring(1, str.Length - 1);
 
-    
-    
+            switch (instruction)
+            {
+                case "Dice":
+                    damage += (dice * factor);
+                    break;
+                case "Proficiency":
+                    int proficiency = Convert.ToInt32(jsonData["proficiency"].ToString());
+                    damage += (proficiency*factor);
+                    break;
+                default:
+                    Debug.Log(instruction);
+                    damage += status[instruction] * factor;
+                    break;
+            }
+        }
+        return damage;
+    }
+
+    public void loadStatus()
+    {
+        status = new Dictionary<string, int>();
+        JsonData jsonData = new JsonData();
+        jsonData = jd["status"];
+        status.Add("HP",Convert.ToInt32(jsonData["HP"].ToString()));
+        status.Add("SP",Convert.ToInt32(jsonData["SP"].ToString()));
+        status.Add("PL",Convert.ToInt32(jsonData["PL"].ToString()));
+        status.Add("AC",Convert.ToInt32(jsonData["AC"].ToString()));
+        status.Add("SL",Convert.ToInt32(jsonData["SL"].ToString()));
+        status.Add("AP",Convert.ToInt32(jsonData["AP"].ToString()));
+    }
 }

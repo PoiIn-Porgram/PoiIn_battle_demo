@@ -8,14 +8,23 @@ public class back : MonoBehaviour
     public GameObject[] board;
     public bool active1;
     public bool active2;
+    public bool[] boolArray = new bool[100];
+    
+    
     private void Start()
     {
         board = GameObject.FindGameObjectsWithTag("board");
-        board[0].transform.position = new Vector3(0, 1, -4);
-        board[0].SetActive(false);
+        foreach (GameObject o in board)
+        {
+            o.transform.position = new Vector3(0,1,-4);
+            o.SetActive(false);
+            //使用C#封装好的自动遍历，性能优良且可读性好
+        }
+        //board[0].transform.position = new Vector3(0, 1, -4);
+        //board[0].SetActive(false);
         active1 = false;
-        board[1].transform.position = new Vector3(0, 1, -4);
-        board[1].SetActive(false);
+        //board[1].transform.position = new Vector3(0, 1, -4);
+        //board[1].SetActive(false);
         active2 = false;
     }
 
