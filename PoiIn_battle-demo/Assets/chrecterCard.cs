@@ -49,11 +49,16 @@ public class chrecterCard : MonoBehaviour
         mySpells = new spells();
         Motimonos = new List<motimono>();
         loadJson();
+        //Debug.Log(damegeDeterminationParser(100, "aimed_attack"));
+        foreach (KeyValuePair<string,int> keyValuePair in status)
+        {
+            Debug.Log(keyValuePair.Key);
+        }
     }
-
+    private JsonData jd = new JsonData();
     public void loadJson()
     {
-        JsonData jd = new JsonData();
+        
         //填入人物卡所在的文件夹位置
         jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/mixieerBulang.json"));
         
@@ -156,5 +161,42 @@ public class chrecterCard : MonoBehaviour
     public List<motimono> GETMotimonos()
     {
         return Motimonos;
+    }
+
+    public int damegeDeterminationParser(int dice,string skillName)
+    {
+        int damage = 0;
+        int factor = 1;
+        JsonData jsonData = jd[skillName];
+        string damageFormula = jsonData["damage_determiniation"].ToString();
+        string[] damageSection = damageFormula.Split('$');
+        foreach (string str in damageSection)
+        {
+            if (str[0] == '-')
+            {
+                factor = -1;
+            }
+            else
+            {
+                factor = 1;
+            }
+            string instruction = str.Substring(1, str.Length - 1);
+
+            switch (instruction)
+            {
+                case "dice":
+                    damage += (dice * factor);
+                    break;
+                case "proficiency":
+                    int proficiency = Convert.ToInt32(jsonData["proficiency"].ToString());
+                    damage += (proficiency*factor);
+                    break;
+                default:
+                    Debug.Log(instruction);
+                    damage += status[instruction] * factor;
+                    break;
+            }
+        }
+        return damage;
     }
 }

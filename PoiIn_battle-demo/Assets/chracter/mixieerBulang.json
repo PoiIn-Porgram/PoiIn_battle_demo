@@ -10,7 +10,6 @@
     },
 
     "Skills_List":[
-        "spells",
         "aimed_attack"
     ],
 
@@ -37,7 +36,7 @@
     "aimed_attack":{
         "proficiency":28,
         "binding_property":"PL",
-        "damage_determiniation":"$+PL$+Proficiency$-Dice"
+        "damage_determiniation":"+PL$+Proficiency$-Dice"
     },
 
     "Speciality":[
