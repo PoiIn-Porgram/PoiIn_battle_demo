@@ -21,20 +21,20 @@ public class characterDeath : MonoBehaviour
 
     private float lerpFactor = 0.1f;
     private Quaternion target2Drotation;
-    IEnumerator lerpRotate()
+    IEnumerator lerpRotate(GameObject character)
     {
-        Vector3 thisRotationVector = this.transform.rotation.eulerAngles;
+        Vector3 thisRotationVector = character.transform.rotation.eulerAngles;
         Vector3 targetRotationVector = target2Drotation.eulerAngles;
-        this.transform.rotation = Quaternion.Slerp(transform.rotation, target2Drotation, lerpFactor);
+        character.transform.rotation = Quaternion.Slerp(character.transform.rotation, target2Drotation, lerpFactor);
         if (Vector3.SqrMagnitude(targetRotationVector -  thisRotationVector)<0.005f)
         {
-            this.transform.rotation = target2Drotation;
+            character.transform.rotation = target2Drotation;
             yield return 0;
         }
         else
         {
             yield return new WaitForSeconds(0.02f);
-            StartCoroutine(lerpRotate());
+            StartCoroutine(lerpRotate(character));
         }
         yield return 0;
     }
@@ -49,8 +49,8 @@ public class characterDeath : MonoBehaviour
         Destroy(character);
     }
 
-    public void kill(){
-        StartCoroutine(lerpRotate());
+    public void kill(GameObject character){
+        StartCoroutine(lerpRotate(character));
         //倒地，目前只是一个旋转，感觉还是用美术资源更好
         // _editableShape.position = this.gameObject.transform.position;
         _particleSystem4Death.transform.position = new Vector3
@@ -60,8 +60,8 @@ public class characterDeath : MonoBehaviour
             );
         _particleSystem.Play();
         //加一个渐隐效果,插值算法不易维护打算用animator
-        //需要之前的定时器函数
+        //需要之前的定时器函数,已协程解决死亡延时问题
         //setDead(this.gameObject);
-        StartCoroutine(timePassSetDead(3,GameObject.FindWithTag("Player")));
+        StartCoroutine(timePassSetDead(3,character));
     }
 }

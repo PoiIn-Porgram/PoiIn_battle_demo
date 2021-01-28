@@ -27,8 +27,10 @@ public class testController : MonoBehaviour
 
     private void Start()
     {
+        GameObject mixieerBulang = GameObject.FindWithTag("mixieerBulang");
         //人物移动脚本
-        _chracterMove = FindObjectOfType<chracterMove>();
+        //_chracterMove = FindObjectOfType<chracterMove>();
+        _chracterMove = mixieerBulang.GetComponent<chracterMove>();
         //骰子
         _dice = FindObjectOfType<dice>();
         //Gal风格脚本控制器
@@ -99,9 +101,13 @@ public class testController : MonoBehaviour
         {
             Debug.Log("dying");
             Debug.Log(_death.gameObject);
-            _death.kill();
+            _death.kill(GameObject.FindWithTag("Player"));
         }
 
-        
+        if (GUILayout.Button("damage"))
+        {
+            _card.changeStatus();
+        }
     }
+    
 }
