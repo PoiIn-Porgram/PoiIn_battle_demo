@@ -44,6 +44,7 @@ public class initializeBoard : MonoBehaviour
             BlockCursorsOnLoad.Remove(BlockCursorsOnLoad[0]);
         }
     }
+    // public GameObject thisBlock;
     void spawnBlock(blockCursor thisBlockCursor)
     {
         GameObject thisBlock;
@@ -52,6 +53,7 @@ public class initializeBoard : MonoBehaviour
         thisBlock.transform.SetParent(this.transform);
         //thisBlock.transform.position = thisBlockCursor.position;
         thisBlock.transform.position = get2Dposition(thisBlockCursor.position);
+        thisBlock.GetComponent<cubeController>().abstractPosition = thisBlockCursor.position;
     }
     public Vector3 get2Dposition(Vector3 _3Dposition)
     {
@@ -59,4 +61,7 @@ public class initializeBoard : MonoBehaviour
             (_3Dposition.z+_3Dposition.x)*0.15f,
             _3Dposition.z+_3Dposition.x);
     }
+
+    
+
 }

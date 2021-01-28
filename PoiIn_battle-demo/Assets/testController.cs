@@ -19,6 +19,7 @@ public class testController : MonoBehaviour
     private chrecterCard _card;
     private testMap _testMap;
     private characterDeath _death;
+    private attackMK1 _attack1;
     private void Awake()
     {
         _testMap = FindObjectOfType<testMap>();
@@ -40,7 +41,7 @@ public class testController : MonoBehaviour
         //死亡脚本
         _death = FindObjectOfType<characterDeath>();
         //地图存档读取器，在awake周期提前触发
-        
+        _attack1 = FindObjectOfType<attackMK1>();
     }
 
     private void OnGUI()
@@ -95,6 +96,7 @@ public class testController : MonoBehaviour
             Debug.Log(cardMotimono.description);
         }
         
+        //K键自杀
         if (Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("dying");
@@ -102,6 +104,18 @@ public class testController : MonoBehaviour
             _death.kill();
         }
 
+        //P键换人
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            Debug.Log("changecharacter!");
+        }
+
+        //左ALT攻击
+        if (Input.GetKeyDown(KeyCode.LeftAlt))
+        {
+            Debug.Log("attacking!");
+            _attack1.attack(_chracterMove.gameObject);
+        }
         
     }
-}S
+}
