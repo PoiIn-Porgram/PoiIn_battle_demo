@@ -19,12 +19,6 @@ public class characterDeath : MonoBehaviour
 
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private float lerpFactor = 0.1f;
     private Quaternion target2Drotation;
     IEnumerator lerpRotate()
@@ -45,7 +39,12 @@ public class characterDeath : MonoBehaviour
         yield return 0;
     }
 
-
+    IEnumerator timePassSetDead(int deathDelay,GameObject character)
+    {
+        yield return new WaitForSeconds(deathDelay);
+        setDead(character);
+        yield return null;
+    }
     public void setDead(GameObject character){
         Destroy(character);
     }
@@ -63,5 +62,6 @@ public class characterDeath : MonoBehaviour
         //加一个渐隐效果,插值算法不易维护打算用animator
         //需要之前的定时器函数
         //setDead(this.gameObject);
+        StartCoroutine(timePassSetDead(3,GameObject.FindWithTag("Player")));
     }
 }

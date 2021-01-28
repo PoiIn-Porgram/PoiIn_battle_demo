@@ -98,11 +98,10 @@ public class testController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.K))
         {
             Debug.Log("dying");
-            // _death.toKill = _chracterMove.gameObject;
             Debug.Log(_death.gameObject);
             _death.kill();
         }
 
         
     }
-}
+}S
