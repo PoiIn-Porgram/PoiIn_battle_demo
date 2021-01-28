@@ -44,11 +44,14 @@ public class chracterMove : MonoBehaviour
     {
         this.transform.position = Vector3.Lerp(transform.position, target2Dposition, lerpFactor);
         cam.transform.position = Vector3.Lerp(cam.transform.position, this.transform.position + reletiveDistance, lerpFactor);
-        if (Vector3.SqrMagnitude(target2Dposition -  this.transform.position)<0.005f&&
-            Vector3.SqrMagnitude(cam.transform.position - reletiveDistance - target2Dposition)<0.00005f)
+        cam.transform.position = new Vector3(cam.transform.position.x,cam.transform.position.y,-10);
+        if (Vector3.SqrMagnitude(cam.transform.position - reletiveDistance - target2Dposition)<0.00005f)
+        {
+            cam.transform.position = reletiveDistance + target2Dposition;
+        }
+        if (Vector3.SqrMagnitude(target2Dposition -  this.transform.position)<0.00005f)
         {
             this.transform.position = target2Dposition;
-            cam.transform.position = reletiveDistance + target2Dposition;
             yield return 0;
         }
         else

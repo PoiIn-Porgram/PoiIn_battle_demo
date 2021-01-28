@@ -9,6 +9,8 @@ TagManager:
   - board
   - particleSystem
   - mixieerBulang
+  - Enemy
+  - chessBoard
   layers:
   - Default
   - TransparentFX
