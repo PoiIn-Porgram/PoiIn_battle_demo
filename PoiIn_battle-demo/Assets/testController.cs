@@ -20,16 +20,20 @@ public class testController : MonoBehaviour
     private testMap _testMap;
     private characterDeath _death;
     private attackMK1 _attack1;
+    private characterSpawner _characterSpawner = new characterSpawner();
     private void Awake()
     {
+        //地图存档读取器，在awake周期提前触发
         _testMap = FindObjectOfType<testMap>();
         _testMap.LoadData();
     }
 
     private void Start()
     {
+        GameObject mixieerBulang = GameObject.FindWithTag("mixieerBulang");
         //人物移动脚本
-        _chracterMove = FindObjectOfType<chracterMove>();
+        //_chracterMove = FindObjectOfType<chracterMove>();
+        _chracterMove = mixieerBulang.GetComponent<chracterMove>();
         //骰子
         _dice = FindObjectOfType<dice>();
         //Gal风格脚本控制器
@@ -40,10 +44,14 @@ public class testController : MonoBehaviour
         _card = FindObjectOfType<chrecterCard>();
         //死亡脚本
         _death = FindObjectOfType<characterDeath>();
-        //地图存档读取器，在awake周期提前触发
+        //攻击脚本
         _attack1 = FindObjectOfType<attackMK1>();
+        //角色生成脚本
+        _characterSpawner = FindObjectOfType<characterSpawner>();
+        //地图存档读取器，在awake周期提前触发
     }
 
+    private int i = 1,j = 0;
     private void OnGUI()
     {
         if (GUILayout.Button("W")||Input.GetKeyDown(KeyCode.W))
@@ -101,7 +109,7 @@ public class testController : MonoBehaviour
         {
             Debug.Log("dying");
             Debug.Log(_death.gameObject);
-            _death.kill();
+            _death.kill(GameObject.FindWithTag("Player"));
         }
 
         //P键换人
@@ -117,5 +125,32 @@ public class testController : MonoBehaviour
             _attack1.attack(_chracterMove.gameObject);
         }
         
+        if (GUILayout.Button("damage"))
+        {
+            _card.changeStatus();
+        }
+
+        if (GUILayout.Button("spawn mixieerBulang"))
+        {
+            _characterSpawner.spawnerCharacter("mixieerBulang",new Vector3Int(j,0,i));
+            i++;
+            if (i>4)
+            {
+                j++;
+                i = 0;
+            }
+        }
+
+        if (GUILayout.Button("spawn Zago"))
+        {
+            _characterSpawner.spawnerCharacter("zako",new Vector3Int(j,0,i));
+             i++;
+            if (i>4)
+            {
+                j++;
+                i = 0;
+            }
+        }
     }
+    
 }

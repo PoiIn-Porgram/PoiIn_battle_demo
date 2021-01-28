@@ -8,12 +8,14 @@ using System.Linq;
 using UnityEngine.UI;
 using LitJson;
 using System.Drawing;
+using System.Text;
 using UnityEditor;
 
 public class chrecterCard : MonoBehaviour
 {
+    public bool isNewGame = true;
     //该角色的名字
-    public string chracterName;
+    public string chracterName;//start里赋值
     //该角色的属性值
     public Dictionary<string, int> status = new Dictionary<string, int>();
     public List<Sprite> Sprites = new List<Sprite>();
@@ -45,20 +47,33 @@ public class chrecterCard : MonoBehaviour
     
     private void Start()
     {
+        chracterName = "mixieerBulang";
         status = new Dictionary<string, int>();
         mySpells = new spells();
         Motimonos = new List<motimono>();
         loadJson();
         loadStatus();
-        Debug.Log(damegeDeterminationParser(100, "aimed_attack"));
+        Debug.Log(jd["name"].ToString());
     }
     private JsonData jd = new JsonData();
     public void loadJson()
     {
-        
+        string folder = "original/";
+        if (isNewGame)
+        {
+            folder = "original/";
+            isNewGame = false;
+        }
+        else
+        {
+            folder = "savedData/";
+        }
         //填入人物卡所在的文件夹位置
-        jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/mixieerBulang.json"));
+        string[] notCloneName = gameObject.name.Split('(');
+
+        jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/"+folder+notCloneName[0]+".json"));
         
+        jd["isNewGame"] = false;//存档标记
         chracterName = jd["name"].ToString();
         
         JsonData jdItem = new JsonData();
@@ -196,7 +211,6 @@ public class chrecterCard : MonoBehaviour
         }
         return damage;
     }
-
     public void loadStatus()
     {
         status = new Dictionary<string, int>();
@@ -209,4 +223,28 @@ public class chrecterCard : MonoBehaviour
         status.Add("SL",Convert.ToInt32(jsonData["SL"].ToString()));
         status.Add("AP",Convert.ToInt32(jsonData["AP"].ToString()));
     }
+
+    public void changeStatus()
+    {
+        //status[statusToChange.Key] = statusToChange.Value;
+        jd["status"]["HP"] = 10;
+        JsonWriter jsonWriter = new JsonWriter();
+        
+        Debug.Log(jd["status"]["HP"]);
+        string folder;
+        if (isNewGame)
+        {
+            folder = "original/";
+            isNewGame = false;
+        }
+        else
+        {
+            folder = "savedData/";
+        }
+        File.WriteAllText(Application.dataPath+"/chracter/"+folder+gameObject.name+".json",
+            Encoding.UTF8.GetString(Encoding.ASCII.GetBytes(JsonMapper.ToJson(jd))),
+            Encoding.ASCII);
+        Debug.Log("newJson");
+    }
+    
 }

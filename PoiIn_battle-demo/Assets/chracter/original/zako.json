@@ -1,0 +1,29 @@
+{
+    "name":"杂鱼",
+    "status":{
+        "HP":100,
+        "SP":20,
+        "PL":20,
+        "AC":20,
+        "SL":20,
+        "AP":10
+    },
+
+    "Skills_List":[
+
+    ],
+
+    "spells": [
+       
+        
+    ],
+
+    "Speciality":[
+        
+    ],
+    "motimono":[
+       
+    ]
+
+
+}
