@@ -13,6 +13,7 @@ public class eventSinario : MonoBehaviour
 
    public void checkSinario(Vector3Int nextPosition)
    {
+      /*
       foreach (enemyStatus._enemyStatus enemy in _enemyStatus.enemies)
       {
          if (enemy.statrPosition == nextPosition)
@@ -21,5 +22,6 @@ public class eventSinario : MonoBehaviour
          }
          
       }
+      */
    }
 }

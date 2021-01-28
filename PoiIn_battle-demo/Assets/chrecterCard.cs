@@ -70,7 +70,7 @@ public class chrecterCard : MonoBehaviour
         }
         //填入人物卡所在的文件夹位置
         string[] notCloneName = gameObject.name.Split('(');
-
+        
         jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/"+folder+notCloneName[0]+".json"));
         
         jd["isNewGame"] = false;//存档标记
