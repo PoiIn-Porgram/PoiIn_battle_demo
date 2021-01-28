@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &80486107947762454
+--- !u!1 &1836309959881502258
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 80486107947762453}
-  - component: {fileID: 80486107947762452}
-  - component: {fileID: 80486107947762455}
-  - component: {fileID: 80486107947762450}
-  - component: {fileID: 80486107947762451}
+  - component: {fileID: 3783080197690185421}
+  - component: {fileID: 3066876505357606579}
+  - component: {fileID: 791165926846854043}
+  - component: {fileID: -5863949620743674062}
   m_Layer: 0
-  m_Name: Sprite-0001_0
-  m_TagString: Untagged
+  m_Name: zago
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &80486107947762453
+--- !u!4 &3783080197690185421
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80486107947762454}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_GameObject: {fileID: 1836309959881502258}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.6, y: 0.6, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &80486107947762452
+--- !u!212 &3066876505357606579
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80486107947762454}
+  m_GameObject: {fileID: 1836309959881502258}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -74,7 +73,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: -6007857137893288414, guid: ebd72d5849291dc40b988102f6552b2e, type: 3}
+  m_Sprite: {fileID: -7058406260311831844, guid: bbdd8dbaa300aa240a7c72b1c14f92f7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -85,17 +84,17 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &80486107947762455
+--- !u!95 &791165926846854043
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80486107947762454}
+  m_GameObject: {fileID: 1836309959881502258}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 58e0b5c50786aea4995bc57860ba88d4, type: 2}
+  m_Controller: {fileID: 9100000, guid: a4a3d50fe0e4874438fe1e4f89cfac3a, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -104,30 +103,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &80486107947762450
+--- !u!114 &-5863949620743674062
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80486107947762454}
+  m_GameObject: {fileID: 1836309959881502258}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 453c29d62e395b9428c85510d109ac83, type: 3}
+  m_Script: {fileID: 11500000, guid: 3caa3f47ceace524fba6e5e1b9a45c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lerpFactor: 0.1
-  confirm: 0
-  Direction: 0
---- !u!114 &80486107947762451
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 80486107947762454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e049bc72591bacb43b00a4f085ba7549, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  chracterName: 
+  Sprites: []
+  spelleList: []

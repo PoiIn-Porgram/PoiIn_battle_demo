@@ -13,6 +13,7 @@ using UnityEditor;
 
 public class chrecterCard : MonoBehaviour
 {
+    public bool isNewGame = true;
     //该角色的名字
     public string chracterName;//start里赋值
     //该角色的属性值
@@ -57,10 +58,22 @@ public class chrecterCard : MonoBehaviour
     private JsonData jd = new JsonData();
     public void loadJson()
     {
-        
+        string folder = "original/";
+        if (isNewGame)
+        {
+            folder = "original/";
+            isNewGame = false;
+        }
+        else
+        {
+            folder = "savedData/";
+        }
         //填入人物卡所在的文件夹位置
-        jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/"+chracterName+".json"));
+        string[] notCloneName = gameObject.name.Split('(');
+
+        jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/"+folder+notCloneName[0]+".json"));
         
+        jd["isNewGame"] = false;//存档标记
         chracterName = jd["name"].ToString();
         
         JsonData jdItem = new JsonData();
@@ -218,7 +231,19 @@ public class chrecterCard : MonoBehaviour
         JsonWriter jsonWriter = new JsonWriter();
         
         Debug.Log(jd["status"]["HP"]);
-        File.WriteAllText(Application.dataPath+"/chracter/mixieerBulang.json",JsonMapper.ToJson(jd),Encoding.Unicode);
+        string folder;
+        if (isNewGame)
+        {
+            folder = "original/";
+            isNewGame = false;
+        }
+        else
+        {
+            folder = "savedData/";
+        }
+        File.WriteAllText(Application.dataPath+"/chracter/"+folder+gameObject.name+".json",
+            Encoding.UTF8.GetString(Encoding.ASCII.GetBytes(JsonMapper.ToJson(jd))),
+            Encoding.ASCII);
         Debug.Log("newJson");
     }
     

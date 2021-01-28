@@ -8,7 +8,7 @@ public class eventSinario : MonoBehaviour
    private enemyStatus _enemyStatus;
    private void Start()
    {
-      _enemyStatus = GameObject.FindWithTag("enemySpawner").GetComponent<enemyStatus>();
+
    }
 
    public void checkSinario(Vector3Int nextPosition)

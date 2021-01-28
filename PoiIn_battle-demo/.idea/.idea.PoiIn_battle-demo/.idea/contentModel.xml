@@ -18,6 +18,7 @@
         <e p="changeLine.cs" t="Include" />
         <e p="changeName.cs" t="Include" />
         <e p="characterDeath.cs" t="Include" />
+        <e p="characterSpawner.cs" t="Include" />
         <e p="chracter2Dposition.cs" t="Include" />
         <e p="chracterMove.cs" t="Include" />
         <e p="chrecterCard.cs" t="Include" />

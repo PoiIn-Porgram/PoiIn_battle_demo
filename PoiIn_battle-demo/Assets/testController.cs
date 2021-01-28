@@ -19,8 +19,10 @@ public class testController : MonoBehaviour
     private chrecterCard _card;
     private testMap _testMap;
     private characterDeath _death;
+    private characterSpawner _characterSpawner = new characterSpawner();
     private void Awake()
     {
+        //地图存档读取器，在awake周期提前触发
         _testMap = FindObjectOfType<testMap>();
         _testMap.LoadData();
     }
@@ -41,10 +43,11 @@ public class testController : MonoBehaviour
         _card = FindObjectOfType<chrecterCard>();
         //死亡脚本
         _death = FindObjectOfType<characterDeath>();
-        //地图存档读取器，在awake周期提前触发
-        
+        //角色生成脚本
+        _characterSpawner = FindObjectOfType<characterSpawner>();
     }
 
+    private int i = 1,j = 0;
     private void OnGUI()
     {
         if (GUILayout.Button("W")||Input.GetKeyDown(KeyCode.W))
@@ -107,6 +110,28 @@ public class testController : MonoBehaviour
         if (GUILayout.Button("damage"))
         {
             _card.changeStatus();
+        }
+
+        if (GUILayout.Button("spawn mixieerBulang"))
+        {
+            _characterSpawner.spawnerCharacter("mixieerBulang",new Vector3Int(j,0,i));
+            i++;
+            if (i>4)
+            {
+                j++;
+                i = 0;
+            }
+        }
+
+        if (GUILayout.Button("spawn Zago"))
+        {
+            _characterSpawner.spawnerCharacter("zako",new Vector3Int(j,0,i));
+             i++;
+            if (i>4)
+            {
+                j++;
+                i = 0;
+            }
         }
     }
     
