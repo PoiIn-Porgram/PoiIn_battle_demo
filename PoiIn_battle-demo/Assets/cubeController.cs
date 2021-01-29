@@ -17,7 +17,7 @@ public class cubeController : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        _player = GameObject.FindGameObjectWithTag("Player");
+        _player = GameObject.FindGameObjectWithTag("mixieerBulang");
         collider2D = this.GetComponent<CapsuleCollider2D>();
         thisBlock = this.gameObject;
         _cubeLerp = FindObjectOfType<cubeLerp>();
@@ -96,8 +96,9 @@ public class cubeController : MonoBehaviour
         //     // _player.transform.position.z
         // );
         target2Dposition = originalPosition + new Vector3(0, 0.34f, 0);
+        _cubeLerp.target2Dposition = target2Dposition;
         StartCoroutine(
-        lerpMove(_player,
+        _cubeLerp.lerpMove(_player,
             0.1f
             )
         );
