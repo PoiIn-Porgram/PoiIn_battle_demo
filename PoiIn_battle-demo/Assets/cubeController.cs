@@ -11,13 +11,13 @@ public class cubeController : MonoBehaviour
     public Vector3 target2Dposition;//必须public且不能封装为lerp的参数
     public Vector3Int abstractPosition;
     private GameObject _player;
-    private chracterMove _chracterMove;
     private cubeLerp _cubeLerp;
 
     // Start is called before the first frame update
     void Start()
     {
         _player = GameObject.FindGameObjectWithTag("mixieerBulang");
+        
         collider2D = this.GetComponent<CapsuleCollider2D>();
         thisBlock = this.gameObject;
         _cubeLerp = FindObjectOfType<cubeLerp>();
@@ -35,7 +35,6 @@ public class cubeController : MonoBehaviour
         entry1.eventID = EventTriggerType.PointerClick;
         // 鼠标进入事件 
         entry2.eventID = EventTriggerType.PointerEnter;
-
         // 鼠标滑出事件 
         entry3.eventID = EventTriggerType.PointerExit;
 
@@ -86,15 +85,20 @@ public class cubeController : MonoBehaviour
         //     thisBlock.transform.position.z
         //     // _player.transform.position.z
         // );
-        target2Dposition = originalPosition + new Vector3(0, 0.34f, 0);
+        target2Dposition = originalPosition + new Vector3(0, 0.34f, -1);
+        //-1代表人物位置
+        //置前地砖一格
+        //之后可根据战局规划做修改
         _cubeLerp.target2Dposition = target2Dposition;
         StartCoroutine(
-        _cubeLerp.lerpMove(_player,
+        _cubeLerp.cubeLerpMove(_player,
             0.1f
             )
         );
         //依然有点按速度太快漂移bug
-        _player.GetComponent<chracterMove>().thisPosition = this.abstractPosition;
+        _player.GetComponent<chracterMove>().formerposition = target2Dposition;
+        _player.GetComponent<chracterMove>().thisPosition = thisBlock.GetComponent<cubeController>().abstractPosition;
+        Debug.Log(_player.GetComponent<chracterMove>().thisPosition);
     }
 
     public void ifGround(){
@@ -104,9 +108,15 @@ public class cubeController : MonoBehaviour
     public void ifEnemy(){
 
     }
+    
+    private Vector3 target2Dposition4Cube;
+    //为了和角色的2Dposition区分开而特加此变量
+    //后续可优化此变量
+    //选择1：将此脚本中lerpMove（专为地砖设计）给到cubeLerp.cs中，并与角色position共用一个变量，条例不清晰但省资源
+    //选择2：为此脚本中关于地砖的代码段新开一个脚本，与控制点击移动的脚本分开，条例清晰但几乎没优化。
 
     public void moveUp(){
-        target2Dposition = originalPosition + new Vector3(0, 0.1f, 0);
+        target2Dposition4Cube = originalPosition + new Vector3(0, 0.1f, 0);
         StartCoroutine(
         lerpMove(thisBlock,
             0.1f
@@ -117,7 +127,7 @@ public class cubeController : MonoBehaviour
     }
 
     public void moveDown(){
-        target2Dposition = originalPosition;
+        target2Dposition4Cube = originalPosition;
         StartCoroutine(
         lerpMove(thisBlock,
             0.1f
@@ -129,10 +139,10 @@ public class cubeController : MonoBehaviour
 
     IEnumerator lerpMove(GameObject gameObj, float lerpFactor)
     {
-        gameObj.transform.position = Vector3.Lerp(gameObj.transform.position, target2Dposition, lerpFactor);
-        if (Vector3.SqrMagnitude(target2Dposition -  gameObj.transform.position)<0.005f)
+        gameObj.transform.position = Vector3.Lerp(gameObj.transform.position, target2Dposition4Cube, lerpFactor);
+        if (Vector3.SqrMagnitude(target2Dposition4Cube -  gameObj.transform.position)<0.005f)
         {
-            gameObj.transform.position = target2Dposition;
+            gameObj.transform.position = target2Dposition4Cube;
             yield return 0;
         }
         else

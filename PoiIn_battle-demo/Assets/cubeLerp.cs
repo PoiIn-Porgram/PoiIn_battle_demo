@@ -17,7 +17,7 @@ public class cubeLerp : MonoBehaviour
         
     }
 
-    public IEnumerator lerpMove(GameObject gameObj, float lerpFactor)
+    public IEnumerator cubeLerpMove(GameObject gameObj, float lerpFactor)
     {
         gameObj.transform.position = Vector3.Lerp(gameObj.transform.position, target2Dposition, lerpFactor);
         if (Vector3.SqrMagnitude(target2Dposition -  gameObj.transform.position)<0.005f)
@@ -28,7 +28,23 @@ public class cubeLerp : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(0.02f);
-            StartCoroutine(lerpMove(gameObj, lerpFactor));
+            StartCoroutine(cubeLerpMove(gameObj, lerpFactor));
+        }
+        yield return 0;
+    }
+    public IEnumerator camLerpMove(GameObject gameObj, GameObject cam, Vector3 reletiveDistance, float lerpFactor)
+    {
+        cam.transform.position = Vector3.Lerp(cam.transform.position, gameObj.transform.position + reletiveDistance, lerpFactor);
+        cam.transform.position = new Vector3(cam.transform.position.x,cam.transform.position.y,-10);
+        if (Vector3.SqrMagnitude(cam.transform.position - reletiveDistance - target2Dposition)<0.00005f)
+        {
+            cam.transform.position = reletiveDistance + target2Dposition;
+            yield return 0;
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.02f);
+            StartCoroutine(camLerpMove(gameObj, cam, reletiveDistance, lerpFactor));
         }
         yield return 0;
     }

@@ -30,6 +30,7 @@ public class chracterMove : MonoBehaviour
     private Vector3 reletiveDistance;
     private eventSinario _eventSinario;
     private testMap _testMap;
+    private cubeLerp _cubeLerp;
     private void Start()
     {
         Debug.Log(thisPosition);
@@ -37,30 +38,31 @@ public class chracterMove : MonoBehaviour
          reletiveDistance = cam.GetComponent<cameraTrack>().cameraReletivePosition;
          _eventSinario = FindObjectOfType<eventSinario>();
          _testMap = FindObjectOfType<testMap>();
+         _cubeLerp = FindObjectOfType<cubeLerp>();
          formerposition = transform.position;//初始化起点
     }
 
-    IEnumerator lerpMove()
-    {
-        this.transform.position = Vector3.Lerp(transform.position, target2Dposition, lerpFactor);
-        cam.transform.position = Vector3.Lerp(cam.transform.position, this.transform.position + reletiveDistance, lerpFactor);
-        cam.transform.position = new Vector3(cam.transform.position.x,cam.transform.position.y,-10);
-        if (Vector3.SqrMagnitude(cam.transform.position - reletiveDistance - target2Dposition)<0.00005f)
-        {
-            cam.transform.position = reletiveDistance + target2Dposition;
-        }
-        if (Vector3.SqrMagnitude(target2Dposition -  this.transform.position)<0.00005f)
-        {
-            this.transform.position = target2Dposition;
-            yield return 0;
-        }
-        else
-        {
-            yield return new WaitForSeconds(0.02f);
-            StartCoroutine(lerpMove());
-        }
-        yield return 0;
-    }
+    // IEnumerator lerpMove()
+    // {
+    //     this.transform.position = Vector3.Lerp(transform.position, target2Dposition, lerpFactor);
+    //     cam.transform.position = Vector3.Lerp(cam.transform.position, this.transform.position + reletiveDistance, lerpFactor);
+    //     cam.transform.position = new Vector3(cam.transform.position.x,cam.transform.position.y,-10);
+    //     if (Vector3.SqrMagnitude(cam.transform.position - reletiveDistance - target2Dposition)<0.00005f)
+    //     {
+    //         cam.transform.position = reletiveDistance + target2Dposition;
+    //     }
+    //     if (Vector3.SqrMagnitude(target2Dposition -  this.transform.position)<0.00005f)
+    //     {
+    //         this.transform.position = target2Dposition;
+    //         yield return 0;
+    //     }
+    //     else
+    //     {
+    //         yield return new WaitForSeconds(0.02f);
+    //         StartCoroutine(lerpMove());
+    //     }
+    //     yield return 0;
+    // }
     
     public bool confirm = false;
     public direction Direction;
@@ -74,7 +76,7 @@ public class chracterMove : MonoBehaviour
         
     }
 
-    private Vector3 formerposition;//理论起点
+    public Vector3 formerposition;//理论起点
 
     public void  moveTo(direction _direction)
     {
@@ -88,10 +90,12 @@ public class chracterMove : MonoBehaviour
                     //抽象坐标向前＋1，虚拟坐标需要左移0.3，上移0.15，其他方向以此类推
                     thisPosition = new Vector3Int(thisPosition.x, thisPosition.y,thisPosition.z + 1);
                     _eventSinario.checkSinario(thisPosition);
-                    target2Dposition = formerposition + new Vector3(-0.3f, 0.15f, 0);
-                    formerposition += new Vector3(-0.3f, 0.15f, 0);
+                    target2Dposition = formerposition + new Vector3(-0.3f, 0.15f, 1);
+                    _cubeLerp.target2Dposition = target2Dposition;
+                    formerposition += new Vector3(-0.3f, 0.15f, 1);
                     //修改前的target不精确，是人物移动中的位置加上相对位置
-                    StartCoroutine(lerpMove());
+                    StartCoroutine(_cubeLerp.cubeLerpMove(this.gameObject, lerpFactor));
+                    StartCoroutine(_cubeLerp.camLerpMove(this.gameObject, cam, reletiveDistance, lerpFactor));
                 }
                 break;
             case direction.left:
@@ -103,10 +107,12 @@ public class chracterMove : MonoBehaviour
                     thisPosition = new Vector3Int(thisPosition.x - 1,
                         thisPosition.y,
                         thisPosition.z);
-                    target2Dposition = formerposition + new Vector3(-0.3f, -0.15f, 0);
-                    formerposition += new Vector3(-0.3f, -0.15f, 0);
+                    target2Dposition = formerposition + new Vector3(-0.3f, -0.15f, -1);
+                    _cubeLerp.target2Dposition = target2Dposition;
+                    formerposition += new Vector3(-0.3f, -0.15f, -1);
                     _eventSinario.checkSinario(thisPosition);
-                    StartCoroutine(lerpMove());
+                    StartCoroutine(_cubeLerp.cubeLerpMove(this.gameObject, lerpFactor));
+                    StartCoroutine(_cubeLerp.camLerpMove(this.gameObject, cam, reletiveDistance, lerpFactor));
                 }
 
                 break;
@@ -119,10 +125,13 @@ public class chracterMove : MonoBehaviour
                     thisPosition = new Vector3Int(thisPosition.x,
                         thisPosition.y,
                         thisPosition.z - 1);
-                    target2Dposition = formerposition + new Vector3(0.3f, -0.15f, 0);
-                    formerposition += new Vector3(0.3f, -0.15f, 0);
+                    target2Dposition = formerposition + new Vector3(0.3f, -0.15f, -1);
+                    //-1同cubeController中-1，可后期根据规划修改。表示角色置前地砖一位
+                    _cubeLerp.target2Dposition = target2Dposition;
+                    formerposition += new Vector3(0.3f, -0.15f, -1);
                     _eventSinario.checkSinario(thisPosition);
-                    StartCoroutine(lerpMove());
+                    StartCoroutine(_cubeLerp.cubeLerpMove(this.gameObject, lerpFactor));
+                    StartCoroutine(_cubeLerp.camLerpMove(this.gameObject, cam, reletiveDistance, lerpFactor));
                 }
 
                 break;
@@ -134,10 +143,12 @@ public class chracterMove : MonoBehaviour
                     thisPosition = new Vector3Int(thisPosition.x + 1,
                         thisPosition.y,
                         thisPosition.z);
-                    target2Dposition = formerposition + new Vector3(0.3f, 0.15f, 0);
-                    formerposition += new Vector3(0.3f, 0.15f, 0);
+                    target2Dposition = formerposition + new Vector3(0.3f, 0.15f, 1);
+                    _cubeLerp.target2Dposition = target2Dposition;
+                    formerposition += new Vector3(0.3f, 0.15f, 1);
                     _eventSinario.checkSinario(thisPosition);
-                    StartCoroutine(lerpMove());
+                    StartCoroutine(_cubeLerp.cubeLerpMove(this.gameObject, lerpFactor));
+                    StartCoroutine(_cubeLerp.camLerpMove(this.gameObject, cam, reletiveDistance, lerpFactor));
                 }
                 break;
         }
