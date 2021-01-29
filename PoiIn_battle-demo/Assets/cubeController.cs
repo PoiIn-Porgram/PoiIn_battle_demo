@@ -8,9 +8,11 @@ public class cubeController : MonoBehaviour
     private GameObject thisBlock;
     private CapsuleCollider2D collider2D;
     private Vector3 originalPosition;
+    public Vector3 target2Dposition;//必须public且不能封装为lerp的参数
     public Vector3Int abstractPosition;
     private GameObject _player;
     private chracterMove _chracterMove;
+    private cubeLerp _cubeLerp;
 
     // Start is called before the first frame update
     void Start()
@@ -18,6 +20,7 @@ public class cubeController : MonoBehaviour
         _player = GameObject.FindGameObjectWithTag("Player");
         collider2D = this.GetComponent<CapsuleCollider2D>();
         thisBlock = this.gameObject;
+        _cubeLerp = FindObjectOfType<cubeLerp>();
         originalPosition = thisBlock.transform.position;
         StartListeners(thisBlock);//鼠标事件监听器
     }
@@ -62,9 +65,8 @@ public class cubeController : MonoBehaviour
         omEnter();
     }
     public void omEnter(){
-        
         Debug.Log("MouseHit!");
-        // moveUp(); //有bug待修复
+        moveUp(); //有bug待修复
     }
 
     private void OMExit(BaseEventData pointData) {
@@ -72,7 +74,7 @@ public class cubeController : MonoBehaviour
     }
     public void omExit(){
         Debug.Log("MouseLeave!");
-        // moveDown();
+        moveDown();
     }
 
     private void OMClick(BaseEventData pointData){
@@ -93,9 +95,9 @@ public class cubeController : MonoBehaviour
         //     thisBlock.transform.position.z
         //     // _player.transform.position.z
         // );
+        target2Dposition = originalPosition + new Vector3(0, 0.34f, 0);
         StartCoroutine(
         lerpMove(_player,
-            originalPosition + new Vector3(0, 0.34f, 0),
             0.1f
             )
         );
@@ -111,7 +113,29 @@ public class cubeController : MonoBehaviour
 
     }
 
-    IEnumerator lerpMove(GameObject gameObj, Vector3 target2Dposition, float lerpFactor)
+    public void moveUp(){
+        target2Dposition = originalPosition + new Vector3(0, 0.1f, 0);
+        StartCoroutine(
+        lerpMove(thisBlock,
+            0.1f
+            )
+        );
+        collider2D.size = new Vector2(0.3f,0.5f);
+        // collider2D.offset = new Vector2(0f,-0.4f);
+    }
+
+    public void moveDown(){
+        target2Dposition = originalPosition;
+        StartCoroutine(
+        lerpMove(thisBlock,
+            0.1f
+            )
+        );
+        collider2D.size = new Vector2(0.3f,0.3f);
+        // collider2D.offset = new Vector2(0f,-0.4f);
+    }
+
+    IEnumerator lerpMove(GameObject gameObj, float lerpFactor)
     {
         gameObj.transform.position = Vector3.Lerp(gameObj.transform.position, target2Dposition, lerpFactor);
         if (Vector3.SqrMagnitude(target2Dposition -  gameObj.transform.position)<0.005f)
@@ -122,30 +146,8 @@ public class cubeController : MonoBehaviour
         else
         {
             yield return new WaitForSeconds(0.02f);
-            StartCoroutine(lerpMove(gameObj, target2Dposition, lerpFactor));
+            StartCoroutine(lerpMove(gameObj, lerpFactor));
         }
         yield return 0;
-    }
-
-    public void moveUp(){
-        StartCoroutine(
-        lerpMove(thisBlock,
-            originalPosition + new Vector3(0, 0.1f, 0),
-            0.1f
-            )
-        );
-        collider2D.size = new Vector2(0.3f,0.5f);
-        // collider2D.offset = new Vector2(0f,-0.4f);
-    }
-
-    public void moveDown(){
-        StartCoroutine(
-        lerpMove(thisBlock,
-            originalPosition,
-            0.1f
-            )
-        );
-        collider2D.size = new Vector2(0.3f,0.3f);
-        // collider2D.offset = new Vector2(0f,-0.4f);
     }
 }
