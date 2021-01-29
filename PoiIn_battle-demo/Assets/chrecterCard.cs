@@ -10,7 +10,9 @@ using LitJson;
 using System.Drawing;
 using System.Text;
 using UnityEditor;
-
+/// <summary>
+///根据新版的策划人物卡，characterCard脚本大改
+/// </summary>
 public class chrecterCard : MonoBehaviour
 {
     public bool isNewGame = true;
