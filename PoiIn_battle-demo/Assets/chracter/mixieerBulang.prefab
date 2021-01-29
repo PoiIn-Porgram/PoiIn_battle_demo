@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5352900726327952053}
   - component: {fileID: 5352900726327952055}
   - component: {fileID: 5352900726327952052}
+  - component: {fileID: 4862971039997800908}
   m_Layer: 0
   m_Name: mixieerBulang
   m_TagString: Player
@@ -147,6 +148,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3caa3f47ceace524fba6e5e1b9a45c0a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isNewGame: 1
   chracterName: 
   Sprites: []
   spelleList: []
+--- !u!114 &4862971039997800908
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5352900726327952049}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a286d938dbf559940a066ca86fc6f230, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

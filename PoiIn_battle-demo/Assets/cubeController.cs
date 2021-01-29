@@ -24,15 +24,6 @@ public class cubeController : MonoBehaviour
         originalPosition = thisBlock.transform.position;
         StartListeners(thisBlock);//鼠标事件监听器
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-
-
     private void StartListeners(GameObject gameObj){
         // EventTrigger trigger = gameObj.GetComponent<EventTrigger>();
         EventTrigger trigger = gameObj.AddComponent<EventTrigger>();
