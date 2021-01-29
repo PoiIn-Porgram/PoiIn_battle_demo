@@ -139,7 +139,8 @@
                {
                    "skill_level":3,
                    "skill_effect": "check SPRA + ACA,createState 加速 * 2;",
-                   "skill_target":"friendly_force in [0,1]","skill_CD":0
+                   "skill_target":"friendly_force in [0,1]",
+                   "skill_CD":0
                }           
             ],
            "acquire_condition":[
