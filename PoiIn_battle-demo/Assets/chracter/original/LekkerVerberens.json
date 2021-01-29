@@ -1,4 +1,3 @@
-@@ -0,0 +1,105 @@
 {
     "isNewGame":true,
     "name":"勒克尔·佛贝伦斯",
@@ -14,6 +13,7 @@
     "state":[
 
     ],
+    "normal_attack":"check PRA * 1.5",
     "Weapons":[
         {
             "name":"初始猎枪",
@@ -27,7 +27,8 @@
                 {
                     "name":"固有效果",
                     "description":"普通攻击时，操练+5",
-                    "Code":"When Normal_Attack,PRA&+5;"
+                    "attack_area":[2,10],
+                    "weapon_effect":"normal_attack + 8"
                 }
             ]
         },
@@ -42,12 +43,14 @@
                 {
                     "name":"进阶固有效果",
                     "description":"普通攻击时，PRA+15；",
-                    "Code":"At Normal_Attack : PRA + 10;"
+                    "attack_area":[2,10],
+                    "weapon_effect":"normal_attack + 23"
                 },
                 {
                     "name":"近战增强",
                     "description":"拥有技能“近战模式”，可耗费1行动点进行切换，攻击范围变成1，单次攻击魔法消耗变成0;",
-                    "code":"Have_Skill Melee_Mode,Consume_AP - 1 : attack_area = 1,SP_consume = 0"
+                    "attack_area":[-1,0],
+                    "weapon_effect":"RCS AP -1"
                 }
             ]
         },
@@ -56,24 +59,26 @@
             "name":"黑夜行者",
             "type":"猎枪",
             "description":"获得布伦斯公司第三代猎枪设计图之后，在那群黑商狐朋狗友的帮助下，按照勒克尔自己的理解开发出的猎枪。除了最先进的瞄准镜、瞄准器和刺刀，勒克尔还加装了消音装置，使他在攻击的时候也能确保自己的隐蔽性，故得名“黑夜行者”。",
-            "attack_area":[2,10],
+            
             "power":15,
             "SP_consume":8,
             "special effect":[
                 {
                     "name":"进阶固有效果",
                     "description":"普通攻击时，PRA+15；",
-                    "Code":"If 普通攻击 : PRA + 10;"
+                    "attack_area":[2,10],
+                    "weapon_effect":"normal_attack + 23"
                 },
                 {
                     "name":"近战增强",
                     "description":"拥有技能“近战模式”，可耗费1行动点进行切换，攻击范围变成1，单次攻击魔法消耗变成0;",
-                    "code":"Have_Skill 近战模式,Consume_AP - 1 : attack_area = 1,SP_consume = 0"
+                    "weapon_effect":"RCS AP -1"
+                    
                 },
                 {
                     "name":"隐身效果",
                     "description":"处于“隐身”状态下，攻击造成的伤害+2，且每次攻击只有50％的概率会解除“隐身”状态。",
-                    "Code":"Under 隐身:damage + 2,Cancel_State %50 隐身"
+                    "weapon_effect":"havaState 隐身,normal_attack + 2;check 50,cancelState 隐身"
                 }
             ]
         }
@@ -81,12 +86,118 @@
     "Skills":[
         {
             "name":"隐身",
-            "level":1,
-            "CD":"level + 1",
-            "comsume_AP":"2 + level",
-            "comsume_SP":5,
             "description":"检定成功后自身进入“隐身”状态。该状态下将无法成为对方敌意行动的对象，也不会进入敌方的索敌机制当中，但仍然会受到来自范围攻击的伤害。一旦自己做出敌意行动，默认将解除“隐身”状态，且敌方无法用“闪避”来对抗本次攻击。每场战斗开始会自动进入3级的“隐身”状态。",
-            "Code":""
+            "skill_level":1,
+            "skill_PRA":1,
+            "PRA_upgrade_threshold":10,
+            "level_upgrade_consume":"RCS AP -1;",
+            "skill_effect":[
+                {
+                    "skill_level":1,
+                    "skill_effect":"check SPRA + ACA,createState 隐身 * 2;",
+                    "skill_target":"friendly_force in [-1,0]",
+                    "skill_CD":2
+                },
+               {
+                   "skill_level":2,
+                   "skill_effect":"check SPRA + ACA,createState 隐身 * 3;",
+                   "skill_target":"friendly_force in [-1,0]",
+                   "skill_CD":3
+               },
+               {
+                   "skill_level":3,
+                   "skill_effect": "check SPRA + ACA,createState 隐身 * 4;",
+                   "skill_target":"friendly_force in [-1,0]",
+                   "skill_CD":4
+               }          
+            ],
+            "skill_CD":"0",
+           "acquire_condition":[
+               "self_contained"
+           ]
+        },
+        {
+            "name":"加速术",
+            "description":"检定成功后目标进入“加速”状态。该状态角色将会获得额外的3点行动点，并获得临时8点敏捷属性加成，立刻调整行动队列。",
+            "skill_level":1,
+            "skill_PRA":1,
+            "PRA_upgrade_threshold":10,
+            "level_upgrade_consume":"RCS AP -1;RCS SP -4",
+            "skill_effect":[
+                {
+                    "skill_level":1,
+                    "skill_effect": "check SPRA + ACA,createState 加速 * 1;",
+                    "skill_target":"friendly_force in [-1,0]",
+                    "skill_CD":0
+                },
+               {
+                   "skill_level":2,
+                   "skill_effect":"check SPRA + ACA,createState 加速 * 2;",
+                   "skill_target":"friendly_force in [-1,0]",
+                   "skill_CD":0
+               },
+               {
+                   "skill_level":3,
+                   "skill_effect": "check SPRA + ACA,createState 加速 * 2;",
+                   "skill_target":"friendly_force in [0,1]","skill_CD":0
+               }           
+            ],
+           "acquire_condition":[
+               "self_contained"
+           ]
+        },
+        {
+            "name":"狙击腿部",
+            "description":"对敌方的腿部发起一次攻击。如果对抗结果为成功，对方需要以最大生命值*1.5为最终阈值进行一次检定，如果没过，则进入“残废”状态，该状态下无法进行移动。",
+            "skill_level":1,
+            "skill_PRA":1,
+            "linked_Status":"PRA",
+            "PRA_upgrade_threshold":10,
+            "level_upgrade_consume":"RCS AP -2;RCS SP -5",
+            "skill_effect":[
+                {
+                    "skill_level":1,
+                    "skill_effect": "check Dice:>:target.HP * 1.5，createState 残废 * 1;",
+                    "skill_target":"enemy in [-1,0]",
+                    "skill_CD":0
+                },
+               {
+                   "skill_level":2,
+                   "skill_effect":"check Dice > target.HP * 1.5，createState 残废 * 2;",
+                   "skill_target":"friendly_force in [-1,0]",
+                   "skill_CD":0
+               },
+               {
+                   "skill_level":3,
+                   "skill_effect": "check Dice > target.HP * 1.5，createState 残废*3;",
+                   "skill_target":"friendly_force in [-1,0]","skill_CD":0
+               }           
+            ],
+           "acquire_condition":[
+               "隐身.PRA:>:10"
+           ],
+           "special_check":"Dice:>:enemy.HP*1.5"
+        },
+        {
+            "name":"枪术训练",
+            "description":"",
+            "skill_level":1,
+            "skill_PRA":1,
+            "linked_Status":"",
+            "PRA_upgrade_threshold":10,
+            "level_upgrade_consume":"RCS AP -2;RCS SP -5",
+            "skill_effect":[
+                {
+                    "skill_level":1,
+                    "skill_effect":"check default,RSC PRA +10",
+                    "skill_target":"friendly_force in [-1,0]",
+                    "skill_CD":0
+                }      
+            ],
+           "acquire_condition":[
+               "隐身.PRA > 10"
+           ]
+           
         }
     ],
 
