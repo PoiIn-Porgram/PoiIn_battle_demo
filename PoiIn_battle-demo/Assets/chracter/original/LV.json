@@ -1,4 +1,5 @@
 {
+    "isNewGame":true,
     "name":"勒克尔·佛贝伦斯",
     "status":{
         "HP":30,
@@ -37,7 +38,7 @@
                     "name":"进阶固有效果",
                     "description":"普通攻击时，PRA+15；",
                     "Code":"When Normal_Attack,PRA&+10;"
-                }
+                },
                 {
                     "name":"近战增强",
                     "description":"拥有技能“近战模式”，可耗费1行动点进行切换，攻击范围变成1，单次攻击魔法消耗变成0;",

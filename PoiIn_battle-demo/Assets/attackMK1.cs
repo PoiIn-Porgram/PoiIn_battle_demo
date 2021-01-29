@@ -12,13 +12,7 @@ public class attackMK1 : MonoBehaviour
         _particleSystem4Attack = GameObject.Find("ParticleSystem4Attack");//待优化，将粒子系统丢入resource
         _particleSystem = _particleSystem4Attack.GetComponent<ParticleSystem>();
     }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
+    
     public float attack(GameObject character){
         Vector3 pos = character.transform.position;
         float health = 100f;//改角色生命值

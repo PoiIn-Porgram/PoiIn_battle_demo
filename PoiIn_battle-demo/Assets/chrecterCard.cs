@@ -10,9 +10,7 @@ using LitJson;
 using System.Drawing;
 using System.Text;
 using UnityEditor;
-/// <summary>
-///根据新版的策划人物卡，characterCard脚本大改
-/// </summary>
+
 public class chrecterCard : MonoBehaviour
 {
     public bool isNewGame = true;
@@ -73,8 +71,9 @@ public class chrecterCard : MonoBehaviour
         //填入人物卡所在的文件夹位置
         string[] notCloneName = gameObject.name.Split('(');
         
-        jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/"+folder+notCloneName[0]+".json"));
-        
+        jd = JsonMapper.ToObject(File.ReadAllText(Application.dataPath + "/chracter/original/LV.json"));
+        Debug.Log(Application.dataPath + "/chracter/"+folder+notCloneName[0]+".json");
+        Debug.Log(Application.dataPath + "/chracter/original/LV.json");
         jd["isNewGame"] = false;//存档标记
         chracterName = jd["name"].ToString();
         
@@ -220,9 +219,9 @@ public class chrecterCard : MonoBehaviour
         jsonData = jd["status"];
         status.Add("HP",Convert.ToInt32(jsonData["HP"].ToString()));
         status.Add("SP",Convert.ToInt32(jsonData["SP"].ToString()));
-        status.Add("PL",Convert.ToInt32(jsonData["PL"].ToString()));
-        status.Add("AC",Convert.ToInt32(jsonData["AC"].ToString()));
-        status.Add("SL",Convert.ToInt32(jsonData["SL"].ToString()));
+        status.Add("PRA",Convert.ToInt32(jsonData["PRA"].ToString()));
+        status.Add("ACA",Convert.ToInt32(jsonData["ACA"].ToString()));
+        status.Add("AGI",Convert.ToInt32(jsonData["AGI"].ToString()));
         status.Add("AP",Convert.ToInt32(jsonData["AP"].ToString()));
     }
 

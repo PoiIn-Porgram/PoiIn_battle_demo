@@ -90,13 +90,7 @@ public class testController : MonoBehaviour
            _cameraTrack.RotateTheCamera(1);
         }
 
-        foreach (chrecterCard.spells spell in _card.spelleList)
-        {
-            if (GUILayout.Button(spell.spellName))
-            {
-                Debug.Log(spell.description);
-            }
-        }
+       
         if(GUILayout.Button("motimono"))
         foreach (chrecterCard.motimono cardMotimono in _card.Motimonos)
         {
