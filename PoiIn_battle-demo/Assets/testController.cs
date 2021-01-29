@@ -21,6 +21,10 @@ public class testController : MonoBehaviour
     private characterDeath _death;
     private attackMK1 _attack1;
     private characterSpawner _characterSpawner = new characterSpawner();
+
+
+    [SerializeField]
+    private GameObject projectilePrefab;
     private void Awake()
     {
         //地图存档读取器，在awake周期提前触发
@@ -116,7 +120,7 @@ public class testController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftAlt))
         {
             Debug.Log("attacking!");
-            _attack1.attack(_chracterMove.gameObject);
+            _attack1.attack(_chracterMove.gameObject, projectilePrefab, new Vector3(0, 0, 0), 0.1f);
         }
         
         if (GUILayout.Button("damage"))
