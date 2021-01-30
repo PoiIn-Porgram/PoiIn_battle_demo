@@ -96,6 +96,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e292938e2b7a764eab02df6ccbe7a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target2Dposition: {x: 0, y: 0, z: 0}
+  abstractPosition: {x: 0, y: 0, z: 0}
 --- !u!70 &2299686507701192092
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

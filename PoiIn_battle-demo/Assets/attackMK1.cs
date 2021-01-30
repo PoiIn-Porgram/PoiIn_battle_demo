@@ -30,7 +30,7 @@ public class attackMK1 : MonoBehaviour
 
     //2.0直接GameObject模式
 
-    private GameObject _player;
+    private GameObject _player;//暂时没用
 
     void Start()
     {
@@ -43,12 +43,12 @@ public class attackMK1 : MonoBehaviour
         // Transform emitPosition = character.transform;
         GameObject toShoot = Instantiate(projectile);
         toShoot.transform.position = character.transform.position;
-        Vector3 pos = character.transform.position;
+        // Vector3 pos = character.transform.position;
         StartCoroutine(straightMove(toShoot, targetPos, moveSpeed));
     }
 
     //平移函数，攻击不用加速度了，迭代器真好用
-    public IEnumerator straightMove(GameObject projectile, Vector3 targetPos, float moveSpeed) //moveSpeed==target即一步到位
+    private IEnumerator straightMove(GameObject projectile, Vector3 targetPos, float moveSpeed) //moveSpeed==target即一步到位
     //改waitforseconds的参数可以改帧率，可以作为画质选项使用
     {
         Vector3 pos = projectile.transform.position;

@@ -55,4 +55,6 @@ public class cubeLerp : MonoBehaviour
     //于是此脚本又用上了
     //总结：target2Dposition必须外置，lerp序列对一个对象只能存在一个。
 
+
+
 }
