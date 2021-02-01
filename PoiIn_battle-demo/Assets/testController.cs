@@ -119,12 +119,12 @@ public class testController : MonoBehaviour
         }
 
         //左ALT攻击
-        if (GUILayout.Button("attack1") || Input.GetKeyDown(KeyCode.LeftAlt))
+        if (GUILayout.Button("attack1")) //|| Input.GetKeyDown(KeyCode.LeftAlt))//用按键会有产生两个projectile的bug
         {
             Debug.Log("attacking!");
             _attack1.attack(_chracterMove.gameObject, projectilePrefab, new Vector3(0, 0, 0), 0.1f);
         }
-        if (GUILayout.Button("attack2") || Input.GetKeyDown(KeyCode.RightAlt))
+        if (GUILayout.Button("attack2")) //|| Input.GetKeyDown(KeyCode.RightAlt))
         {
             Debug.Log("attacking!");
             _attack2.dTime = 0;
