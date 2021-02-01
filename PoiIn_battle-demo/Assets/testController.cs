@@ -157,6 +157,8 @@ public class testController : MonoBehaviour
                 i = 0;
             }
         }
+
+        var data = Resources.Load("ScriptableObject");
     }
     
 }
