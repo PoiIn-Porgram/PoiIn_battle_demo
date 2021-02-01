@@ -29,7 +29,7 @@ public enum weaponClass
 {
     initialWeapon,
     progressiveWeapon,
-    finalWeapon
+    ultimateWeapon
 }
 
 [Serializable]
