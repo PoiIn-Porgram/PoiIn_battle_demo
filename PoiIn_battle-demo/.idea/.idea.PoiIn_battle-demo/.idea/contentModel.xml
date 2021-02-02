@@ -40,8 +40,9 @@
         <e p="JSON.cs" t="Include" />
         <e p="newCharacterCard.cs" t="Include" />
         <e p="Resources" t="Include">
-          <e p="CharacterCardItem.cs" t="Include" />
+          <e p="item.cs" t="Include" />
         </e>
+        <e p="scriptableObjectAnalyser.cs" t="Include" />
         <e p="sinarioController.cs" t="Include" />
         <e p="test.cs" t="Include" />
         <e p="testController.cs" t="Include" />
