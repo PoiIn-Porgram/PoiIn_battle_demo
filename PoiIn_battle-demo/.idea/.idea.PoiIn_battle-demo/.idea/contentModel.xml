@@ -7,6 +7,7 @@
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
         <e p="attackMK1.cs" t="Include" />
+        <e p="attackMK2.cs" t="Include" />
         <e p="back.cs" t="Include" />
         <e p="backbag" t="Include">
           <e p="Materials" t="Include">
@@ -31,13 +32,18 @@
           <e p="cubesId.txt" t="Include" />
         </e>
         <e p="dice.cs" t="Include" />
+        <e p="editor.cs" t="Include" />
         <e p="enemyAI.cs" t="Include" />
         <e p="enemyStatus.cs" t="Include" />
         <e p="eventSinario.cs" t="Include" />
         <e p="initializeBoard.cs" t="Include" />
         <e p="JSON.cs" t="Include" />
         <e p="newCharacterCard.cs" t="Include" />
+        <e p="Resources" t="Include">
+          <e p="CharacterCardItem.cs" t="Include" />
+        </e>
         <e p="sinarioController.cs" t="Include" />
+        <e p="test.cs" t="Include" />
         <e p="testController.cs" t="Include" />
         <e p="testMap.cs" t="Include" />
         <e p="testSinario.txt" t="Include" />
