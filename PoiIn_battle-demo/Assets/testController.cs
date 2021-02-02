@@ -158,7 +158,11 @@ public class testController : MonoBehaviour
             }
         }
 
-        var data = Resources.Load("ScriptableObject");
+        if (GUILayout.Button("read scriptable object"))
+        {
+            var data = Resources.Load<Item>("Item");
+            Debug.Log(data.AP);
+        }
     }
     
 }

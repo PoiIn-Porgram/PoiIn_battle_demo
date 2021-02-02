@@ -2,8 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEditor;
 
-
+[CustomEditor(typeof(Item))]
 [CreateAssetMenu(fileName = "New Item", menuName = "Inventory/New Item")]
 public class Item : ScriptableObject
 {
@@ -16,6 +17,14 @@ public class Item : ScriptableObject
     public List<skill> skills;
     public List<speciality> Specialities;
     public List<motimono> Motimonos;
+
+    public string getName()
+    {
+        
+        return characterName;
+    }
+
+
 }
 
 public enum weaponType
