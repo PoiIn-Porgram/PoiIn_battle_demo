@@ -95,7 +95,7 @@ CapsuleCollider2D:
   m_Density: 1
   m_Material: {fileID: 0}
   m_IsTrigger: 1
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.3, y: 0.3}
@@ -112,3 +112,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0e292938e2b7a764eab02df6ccbe7a19, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  target2Dposition: {x: 0, y: 0, z: 0}
+  abstractPosition: {x: 0, y: 0, z: 0}

@@ -95,7 +95,6 @@ public class cubeController : MonoBehaviour
             0.1f
             )
         );
-        //依然有点按速度太快漂移bug
         _player.GetComponent<chracterMove>().formerposition = target2Dposition;
         _player.GetComponent<chracterMove>().thisPosition = thisBlock.GetComponent<cubeController>().abstractPosition;
         Debug.Log(_player.GetComponent<chracterMove>().thisPosition);
