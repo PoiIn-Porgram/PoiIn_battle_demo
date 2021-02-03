@@ -15,12 +15,12 @@
           </e>
         </e>
         <e p="backLoader.cs" t="Include" />
+        <e p="blurShader.shader" t="Include" />
         <e p="cameraTrack.cs" t="Include" />
         <e p="castSpells.cs" t="Include" />
         <e p="changeLine.cs" t="Include" />
         <e p="changeName.cs" t="Include" />
         <e p="characterDeath.cs" t="Include" />
-        <e p="characterPointMove.cs" t="Include" />
         <e p="characterSpawner.cs" t="Include" />
         <e p="chracter2Dposition.cs" t="Include" />
         <e p="chracterMove.cs" t="Include" />
@@ -43,6 +43,13 @@
           <e p="item.cs" t="Include" />
         </e>
         <e p="scriptableObjectAnalyser.cs" t="Include" />
+        <e p="Scripts" t="Include">
+          <e p="roundScrollView" t="Include">
+            <e p="keepCompsVertical.cs" t="Include" />
+            <e p="roundScrollView.cs" t="Include" />
+            <e p="roundScrollView2.cs" t="Include" />
+          </e>
+        </e>
         <e p="sinarioController.cs" t="Include" />
         <e p="test.cs" t="Include" />
         <e p="testController.cs" t="Include" />

@@ -20,7 +20,7 @@ MonoBehaviour:
   PRA: 0
   ACA: 0
   AGI: 0
-  characterInfo: 
+  characterInfo: textCharacter
   weapons: []
   skills: []
   Specialities: []
