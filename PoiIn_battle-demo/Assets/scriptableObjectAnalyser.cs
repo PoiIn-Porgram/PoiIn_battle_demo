@@ -2,8 +2,10 @@
 using System.Collections;
 using System.Collections.Generic;
  using System.Diagnostics;
+ using System.Linq;
  using TMPro;
  using UnityEngine;
+ using Debug = UnityEngine.Debug;
 
  enum Tag
  {
@@ -48,16 +50,34 @@ using System.Collections.Generic;
 public class scriptableObjectAnalyser : MonoBehaviour
 {
  private Dictionary<string, int> status = new Dictionary<string, int>();
+ 
+ [SerializeField][TextArea]
+ private string PoiInCode = "";
  private void Start()
  {
+  PoiInCode = "If +- SP; HP + Round 66;";
   status = FindObjectOfType<chrecterCard>().status;
+  initializeKeywordDictionary();
+  token();
+  TokenStruct[] tokenStructs = TokenStructQueue.ToArray();
+  foreach (TokenStruct tokenStruct in tokenStructs)
+  {
+   Debug.Log(tokenStruct._tag);
+   if (tokenStruct._tag == Tag.Num)
+   {
+    Debug.Log(tokenStruct.numValue);
+   }
+  }
  }
 
- private Dictionary<string, Tag> keywordsDictionary;
+ private Dictionary<string, Tag> keywordsDictionary = new Dictionary<string, Tag>();
  private Queue<TokenStruct> TokenStructQueue = new Queue<TokenStruct>();
 
  private void initializeKeywordDictionary()
  {
+  keywordsDictionary.Add(" ",Tag.LineFeed);
+  keywordsDictionary.Add(":", Tag.Colon);
+  keywordsDictionary.Add(";",Tag.Semicon);
   keywordsDictionary.Add("+",Tag.Add);
   keywordsDictionary.Add("-",Tag.Minus);
   keywordsDictionary.Add("*",Tag.Multiple);
@@ -80,133 +100,181 @@ public class scriptableObjectAnalyser : MonoBehaviour
  }
  
  int endCHr = 0;
- int curChr = 0;
+ private int curChr = 0;
 
- private char scanNextChar(ref string PoiInCode)
+ enum curCharType
  {
-      curChr++;
-      return PoiInCode[curChr];
+  NULL,
+  number,
+  word,
+  symbal,
+  end
  }
 
- private string scanFullWord(ref string PoiInCode)
+ private curCharType thisType = curCharType.NULL;
+ private bool isEnd = false;
+ private char scanNextChar()
  {
-  string fullWord = "";
-  char ch = PoiInCode[curChr];
-  while ((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
+      curChr++;
+      if (curChr>endCHr)
+      {
+       isEnd = true;
+       thisType = curCharType.end;
+       curChr--;
+       return '@';
+      }
+      //Debug.Log(curChr);
+      char ch = PoiInCode[curChr];
+      if (ch == ' ')
+      {
+       return scanNextChar();
+      }
+      //index out of range
+      if (ch>='0'&&ch<='9')
+      {
+       thisType = curCharType.number;
+      }else if (ch>='a'&&ch<='z')
+      {
+       thisType = curCharType.word;
+      }
+      else if (ch>='A'&&ch<='Z')
+      {
+       thisType = curCharType.word;
+      }
+      else
+      {
+       thisType = curCharType.symbal;
+      }
+      return ch;
+ }
+
+ private string scanFullWord()
+ {
+  string fullWord = ""+PoiInCode[curChr];
+  char ch = scanNextChar();
+  while (thisType == curCharType.word)
   {
    fullWord = fullWord + PoiInCode[curChr];
-   scanNextChar(ref PoiInCode);
+   scanNextChar();
   }
+  curChr--;
   return fullWord;
  }
 
- private string getFullSymbal(ref string PoiInCode)
+ private string getFullSymbal()
  {
-  char ch = PoiInCode[curChr];
-  string fullSymbal = "";
-  while (ch!=' ')
+  string fullSymbal = ""+PoiInCode[curChr];
+
+  char ch = scanNextChar();
+  while (thisType ==curCharType.symbal)
   {
    fullSymbal = fullSymbal + ch;
-   ch = scanNextChar(ref PoiInCode);
+   scanNextChar();
   }
+  curChr--;
   return fullSymbal;
  }
- private void token(string PoiInCode)
- {
-  curChr = -1;
-  endCHr = PoiInCode.Length;
-  
-  while (curChr<=endCHr)
-  {
-   
-   TokenStruct tokenStruct = new TokenStruct();
-   
-   char ch = scanNextChar(ref PoiInCode);
-   
-   if (ch == '\n')
-   {
-       tokenStruct._tag = Tag.LineFeed;
-       TokenStructQueue.Enqueue(tokenStruct);
-       continue;
-   }
 
-   if (ch>='0'&&ch<='9')
+
+ private void token()
+ {
+  isEnd = false;
+  curChr = -1;
+  endCHr = PoiInCode.Length-1;
+
+  while (!isEnd)
+  {
+   TokenStruct tokenStruct = new TokenStruct();
+   char ch = scanNextChar();
+
+    if (thisType == curCharType.number)
    {
     int value = 0;
     do
     {
      value = value * 10 + ch - '0';
-     ch = scanNextChar(ref PoiInCode);
-    } while (ch>='0'&&ch<='9');
+     ch = scanNextChar();
+
+    } while (thisType == curCharType.number);
 
     tokenStruct._tag = Tag.Num;
     tokenStruct.numValue = value;
     TokenStructQueue.Enqueue(tokenStruct);
    }
-   else if ((ch>='a'&&ch<='z')||(ch>='A'&&ch<='Z'))
-   {
-    switch (scanFullWord(ref PoiInCode))
+    else if (thisType == curCharType.word)
     {
-     case "If":
-      tokenStruct._tag = Tag.KW_If;
-      break;
-     case "Else":
-      tokenStruct._tag = Tag.KW_Else;
-      break;
-     case "Self":
-      tokenStruct._tag = Tag.KW_Self;
-      break;
-     case "Target":
-      tokenStruct._tag = Tag.KW_Target;
-      break;
-     case "Dice":
-      tokenStruct._tag = Tag.KF_Dice;
-      break;
-     case "Round":
-      tokenStruct._tag = Tag.KW_Round;
-      break;
-     case "Instantiate":
-      tokenStruct._tag = Tag.KF_Instantiate;
-      break;
-     case "CreateState":
-      tokenStruct._tag = Tag.KF_CreateState;
-      break;
-     case "CancelState":
-      tokenStruct._tag = Tag.KF_CancelState;
-      break;
-     case "DisruptCycle":
-      tokenStruct._tag = Tag.KF_DisruptCycle;
-      break;
-     case "HP":
-      tokenStruct._tag = Tag.HP;
-      break;
-     case "SP":
-      tokenStruct._tag = Tag.SP;
-      break;
-     case "AP":
-      tokenStruct._tag = Tag.AP;
-      break;
-     case "PRA":
-      tokenStruct._tag = Tag.PRA;
-      break;
-     case "ACA":
-      tokenStruct._tag = Tag.ACA;
-      break;
-     case "AGI":
-      tokenStruct._tag = Tag.AGI;
-      break;
-     case "Normal_Attack":
-      tokenStruct._tag = Tag.KF_Normal_Attack;
-      break;
-     case "//":
-      tokenStruct._tag = Tag.Note;
-      break;
+     switch (scanFullWord())
+     {
+      case "If":
+       tokenStruct._tag = Tag.KW_If;
+       break;
+      case "Else":
+       tokenStruct._tag = Tag.KW_Else;
+       break;
+      case "Self":
+       tokenStruct._tag = Tag.KW_Self;
+       break;
+      case "Target":
+       tokenStruct._tag = Tag.KW_Target;
+       break;
+      case "Dice":
+       tokenStruct._tag = Tag.KF_Dice;
+       break;
+      case "Round":
+       tokenStruct._tag = Tag.KW_Round;
+       break;
+      case "Instantiate":
+       tokenStruct._tag = Tag.KF_Instantiate;
+       break;
+      case "CreateState":
+       tokenStruct._tag = Tag.KF_CreateState;
+       break;
+      case "CancelState":
+       tokenStruct._tag = Tag.KF_CancelState;
+       break;
+      case "DisruptCycle":
+       tokenStruct._tag = Tag.KF_DisruptCycle;
+       break;
+      case "HP":
+       tokenStruct._tag = Tag.HP;
+       break;
+      case "SP":
+       tokenStruct._tag = Tag.SP;
+       break;
+      case "AP":
+       tokenStruct._tag = Tag.AP;
+       break;
+      case "PRA":
+       tokenStruct._tag = Tag.PRA;
+       break;
+      case "ACA":
+       tokenStruct._tag = Tag.ACA;
+       break;
+      case "AGI":
+       tokenStruct._tag = Tag.AGI;
+       break;
+      case "Normal_Attack":
+       tokenStruct._tag = Tag.KF_Normal_Attack;
+       break;
+      case "//":
+       tokenStruct._tag = Tag.Note;
+       break;
+      default:
+       tokenStruct._tag = Tag.Error;
+       break;
+     }
+
+     TokenStructQueue.Enqueue(tokenStruct);
+     continue;
     }
-   }
-   else
-   {
-    switch (getFullSymbal(ref PoiInCode))
+
+    if (thisType == curCharType.symbal)
     {
+     switch (getFullSymbal())
+     {
+      case "\n":
+       tokenStruct._tag = Tag.LineFeed;
+       break;
       case "+":
        tokenStruct._tag = Tag.Add;
        break;
@@ -256,11 +324,11 @@ public class scriptableObjectAnalyser : MonoBehaviour
        tokenStruct._tag = Tag.Lower;
        break;
       case ">=":
-       case "=>":
+      case "=>":
        tokenStruct._tag = Tag.GreaterEqual;
        break;
       case "<=":
-       case "=<":
+      case "=<":
        tokenStruct._tag = Tag.LowerEqual;
        break;
       case "==":
@@ -284,16 +352,24 @@ public class scriptableObjectAnalyser : MonoBehaviour
       case "=":
        tokenStruct._tag = Tag.Assign;
        break;
+      default:
+       tokenStruct._tag = Tag.Error;
+       break;
+     }
+     TokenStructQueue.Enqueue(tokenStruct);
+     continue;
     }
 
-    
-   }
-
+    tokenStruct._tag = Tag.Error;
+     TokenStructQueue.Enqueue(tokenStruct);
 
 
 
   }
-
+  return;
  }
+ 
+ 
+ 
 }
 

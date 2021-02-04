@@ -107,7 +107,7 @@ public class newCharacterCard : MonoBehaviour
         loadStatus();
         foreach (KeyValuePair<string,int> keyValuePair in status)
         {
-            Debug.Log(keyValuePair.Key+":"+keyValuePair.Value);
+            //Debug.Log(keyValuePair.Key+":"+keyValuePair.Value);
         }
         loadState();
         loadWeapons();
