@@ -38,7 +38,7 @@ public class testMap : MonoBehaviour
 		{
 			Parse(s);
 		}
-		Debug.Log("load_success");
+		//		Debug.Log("load_success");
 	}
 	public static void LoadJsonFromFile(ref JSON json)
 	{

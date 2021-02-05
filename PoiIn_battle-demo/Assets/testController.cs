@@ -22,7 +22,7 @@ public class testController : MonoBehaviour
     private attackMK1 _attack1;
     private attackMK2 _attack2;
     private characterSpawner _characterSpawner = new characterSpawner();
-
+    private scriptableObjectAnalyser _scriptableObjectAnalyser;
 
     [SerializeField]
     private GameObject projectilePrefab;
@@ -55,6 +55,7 @@ public class testController : MonoBehaviour
         //角色生成脚本
         _characterSpawner = FindObjectOfType<characterSpawner>();
         //地图存档读取器，在awake周期提前触发
+        _scriptableObjectAnalyser = FindObjectOfType<scriptableObjectAnalyser>();
     }
 
     private int i = 1,j = 0;
@@ -162,6 +163,11 @@ public class testController : MonoBehaviour
         {
             var data = Resources.Load<Item>("Item");
             Debug.Log(data.AP);
+        }
+
+        if (GUILayout.Button("Token"))
+        {
+            _scriptableObjectAnalyser.token();
         }
     }
     

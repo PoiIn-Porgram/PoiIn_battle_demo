@@ -55,10 +55,14 @@ public class scriptableObjectAnalyser : MonoBehaviour
  private string PoiInCode = "";
  private void Start()
  {
-  PoiInCode = "If +- SP; HP + Round 66;";
   status = FindObjectOfType<chrecterCard>().status;
   initializeKeywordDictionary();
   token();
+ 
+ }
+
+ private void logQueue()
+ {
   TokenStruct[] tokenStructs = TokenStructQueue.ToArray();
   foreach (TokenStruct tokenStruct in tokenStructs)
   {
@@ -69,7 +73,6 @@ public class scriptableObjectAnalyser : MonoBehaviour
    }
   }
  }
-
  private Dictionary<string, Tag> keywordsDictionary = new Dictionary<string, Tag>();
  private Queue<TokenStruct> TokenStructQueue = new Queue<TokenStruct>();
 
@@ -118,6 +121,7 @@ public class scriptableObjectAnalyser : MonoBehaviour
       curChr++;
       if (curChr>endCHr)
       {
+       logQueue();
        isEnd = true;
        thisType = curCharType.end;
        curChr--;
@@ -155,7 +159,10 @@ public class scriptableObjectAnalyser : MonoBehaviour
   while (thisType == curCharType.word)
   {
    fullWord = fullWord + PoiInCode[curChr];
-   scanNextChar();
+   if (scanNextChar()=='_')
+   {
+    thisType = curCharType.word;//conjection
+   }
   }
   curChr--;
   return fullWord;
@@ -163,12 +170,32 @@ public class scriptableObjectAnalyser : MonoBehaviour
 
  private string getFullSymbal()
  {
-  string fullSymbal = ""+PoiInCode[curChr];
-
+  string fullSymbal = "" + PoiInCode[curChr];
+  if (fullSymbal == "(" || fullSymbal == ")" || fullSymbal == "{"||fullSymbal=="}"||fullSymbal=="\n")
+  {
+   scanNextChar();
+   curChr--;
+   return fullSymbal;
+  }
   char ch = scanNextChar();
   while (thisType ==curCharType.symbal)
   {
+   if (ch == '('|| ch == ')' || ch == '{'||ch == '}'||ch == '\n')
+   {
+    scanNextChar();
+    curChr--;
+    return fullSymbal;
+   }
+   
    fullSymbal = fullSymbal + ch;
+   
+   Debug.Log(fullSymbal+fullSymbal.Length);
+   if (fullSymbal.Length==2)
+   {
+    scanNextChar();
+    curChr--;
+    return fullSymbal;
+   }
    scanNextChar();
   }
   curChr--;
@@ -176,15 +203,16 @@ public class scriptableObjectAnalyser : MonoBehaviour
  }
 
 
- private void token()
+ public void token()
  {
   isEnd = false;
   curChr = -1;
   endCHr = PoiInCode.Length-1;
-
+  TokenStruct tokenStruct = new TokenStruct();
+  tokenStruct._tag = Tag.End;
   while (!isEnd)
   {
-   TokenStruct tokenStruct = new TokenStruct();
+   //tokenStruct = new TokenStruct();
    char ch = scanNextChar();
 
     if (thisType == curCharType.number)
@@ -197,8 +225,14 @@ public class scriptableObjectAnalyser : MonoBehaviour
 
     } while (thisType == curCharType.number);
 
-    tokenStruct._tag = Tag.Num;
+
+    Debug.Log(tokenStruct._tag+"before NUmber");
+    if (tokenStruct._tag==Tag.Minus)
+    {
+     value = -1*value;
+    }
     tokenStruct.numValue = value;
+    tokenStruct._tag = Tag.Num;
     TokenStructQueue.Enqueue(tokenStruct);
    }
     else if (thisType == curCharType.word)
@@ -256,11 +290,9 @@ public class scriptableObjectAnalyser : MonoBehaviour
       case "Normal_Attack":
        tokenStruct._tag = Tag.KF_Normal_Attack;
        break;
-      case "//":
-       tokenStruct._tag = Tag.Note;
-       break;
       default:
        tokenStruct._tag = Tag.Error;
+       Debug.Log("errorChr == "+ch);
        break;
      }
 
@@ -270,10 +302,15 @@ public class scriptableObjectAnalyser : MonoBehaviour
 
     if (thisType == curCharType.symbal)
     {
-     switch (getFullSymbal())
+     string fulls = getFullSymbal();
+     switch (fulls)
      {
+      case "//":
+       tokenStruct._tag = Tag.Note;
+       break;
       case "\n":
        tokenStruct._tag = Tag.LineFeed;
+       continue;
        break;
       case "+":
        tokenStruct._tag = Tag.Add;
@@ -354,21 +391,25 @@ public class scriptableObjectAnalyser : MonoBehaviour
        break;
       default:
        tokenStruct._tag = Tag.Error;
+       Debug.Log("erroS"+fulls);
        break;
      }
      TokenStructQueue.Enqueue(tokenStruct);
      continue;
     }
 
-    tokenStruct._tag = Tag.Error;
+    if (ch!='@')
+    {
+     tokenStruct._tag = Tag.Error;
+     Debug.Log("FIN"+ch);
      TokenStructQueue.Enqueue(tokenStruct);
-
-
-
+    }
+    
   }
-  return;
+
+
  }
- 
+
  
  
 }
