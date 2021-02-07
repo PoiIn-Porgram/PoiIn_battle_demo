@@ -1,7 +1,3 @@
-<<<<<<< HEAD
-# Git_Task
-a demo for the usage of the Git
-=======
 # develop分支说明
 
 **develop tool**
@@ -15,4 +11,3 @@ a demo for the usage of the Git
 
 **参考资料**
 - 可放入一些开发相关的参考资料，便于后续的“特别感谢"部分
->>>>>>> 482c988f861dbdab201ac5fd916a6f823fcdc3b8
