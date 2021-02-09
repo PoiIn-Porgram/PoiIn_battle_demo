@@ -21,6 +21,7 @@ public class testController : MonoBehaviour
     private characterDeath _death;
     private attackMK1 _attack1;
     private attackMK2 _attack2;
+    private aStar _aStar;
     private characterSpawner _characterSpawner = new characterSpawner();
     private scriptableObjectAnalyser _scriptableObjectAnalyser;
 
@@ -54,6 +55,8 @@ public class testController : MonoBehaviour
         _attack2 = FindObjectOfType<attackMK2>();
         //角色生成脚本
         _characterSpawner = FindObjectOfType<characterSpawner>();
+        //寻路脚本
+        _aStar = FindObjectOfType<aStar>();
         //地图存档读取器，在awake周期提前触发
         _scriptableObjectAnalyser = FindObjectOfType<scriptableObjectAnalyser>();
     }
@@ -130,6 +133,11 @@ public class testController : MonoBehaviour
             Debug.Log("attacking!");
             _attack2.dTime = 0;
             _attack2.attack(_chracterMove.gameObject, projectilePrefab, new Vector3(0, 0, _chracterMove.transform.position.z), 2f);
+        }
+        if (GUILayout.Button("aStar"))
+        {
+            Debug.Log("aStar!");
+            _aStar.aiRoadFinder();
         }
         
         if (GUILayout.Button("damage"))

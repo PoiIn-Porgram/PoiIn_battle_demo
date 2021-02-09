@@ -136,6 +136,7 @@ GameObject:
   - component: {fileID: 30556603}
   - component: {fileID: 30556605}
   - component: {fileID: 30556604}
+  - component: {fileID: 30556606}
   m_Layer: 0
   m_Name: testController
   m_TagString: Untagged
@@ -208,6 +209,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a286d938dbf559940a066ca86fc6f230, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &30556606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30556600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b397186506ed0d49a4593d2931dbf10, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  abstractPosition: {x: 0, y: 0, z: 0}
+  targetPosition: {x: 2, y: 0, z: 2}
+  Direction: 0
+  go2AbPosition: {x: 0, y: 0, z: 0}
 --- !u!1 &183252354
 GameObject:
   m_ObjectHideFlags: 0
@@ -5733,6 +5750,7 @@ MonoBehaviour:
   - {fileID: 4217286023310665808, guid: 078ce6fd546cff94c8d1b473f4c077c1, type: 3}
   - {fileID: 8902022056146639547, guid: 65685ff218123394095958062dffdd26, type: 3}
   - {fileID: 1566355988243607005, guid: 0fd424dfaf72d2d44b97afc205a46ac7, type: 3}
+  allCubes: []
 --- !u!114 &917839728
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17271,6 +17289,10 @@ PrefabInstance:
     - target: {fileID: 5352900726327952052, guid: 51943fa77cf1e834cb7d300c2e6d10cf, type: 3}
       propertyPath: m_Enabled
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5352900726327952053, guid: 51943fa77cf1e834cb7d300c2e6d10cf, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 4862971039997800908, guid: 51943fa77cf1e834cb7d300c2e6d10cf, type: 3}

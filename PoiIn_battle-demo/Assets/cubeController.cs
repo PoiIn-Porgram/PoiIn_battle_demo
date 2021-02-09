@@ -9,7 +9,7 @@ public class cubeController : MonoBehaviour
     private CapsuleCollider2D collider2D;
     private Vector3 originalPosition;
     public Vector3 target2Dposition;//必须public且不能封装为lerp的参数
-    public Vector3Int abstractPosition;
+    public Vector3Int abstractPosition;//方便调试与调用
     private GameObject _player;
     private cubeLerp _cubeLerp;
 
@@ -97,6 +97,7 @@ public class cubeController : MonoBehaviour
         );
         _player.GetComponent<chracterMove>().formerposition = target2Dposition;
         _player.GetComponent<chracterMove>().thisPosition = thisBlock.GetComponent<cubeController>().abstractPosition;
+        //可能可以不用getcomponent？没试过，优化时这里是个入手点，记着
         Debug.Log(_player.GetComponent<chracterMove>().thisPosition);
     }
 

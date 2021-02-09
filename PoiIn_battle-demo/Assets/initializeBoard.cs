@@ -49,6 +49,8 @@ public class initializeBoard : MonoBehaviour
     {
         GameObject thisBlock;
         thisBlock = Instantiate(_cubeManager.cubeList[thisBlockCursor.blockStyle]);
+        _cubeManager.allCubes.Add(thisBlock);
+        // Debug.Log(_cubeManager.allCubes);
         thisBlock.SetActive(true);
         thisBlock.transform.SetParent(this.transform);
         //thisBlock.transform.position = thisBlockCursor.position;

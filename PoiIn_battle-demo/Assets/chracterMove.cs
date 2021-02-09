@@ -23,7 +23,8 @@ public class chracterMove : MonoBehaviour
         front,
         left,
         back,
-        right
+        right,
+        hold
     }
 
     private GameObject cam;
@@ -95,6 +96,7 @@ public class chracterMove : MonoBehaviour
                     formerposition += new Vector3(-0.3f, 0.15f, 1);
                     //修改前的target不精确，是人物移动中的位置加上相对位置
                     StartCoroutine(_cubeLerp.cubeLerpMove(this.gameObject, lerpFactor));
+                    //这里的this用的不好，会默认操作同tag下的第一个GameObject，无法指定操作的对象
                     StartCoroutine(_cubeLerp.camLerpMove(this.gameObject, cam, reletiveDistance, lerpFactor));
                 }
                 break;
@@ -150,6 +152,8 @@ public class chracterMove : MonoBehaviour
                     StartCoroutine(_cubeLerp.cubeLerpMove(this.gameObject, lerpFactor));
                     StartCoroutine(_cubeLerp.camLerpMove(this.gameObject, cam, reletiveDistance, lerpFactor));
                 }
+                break;
+            case direction.hold:
                 break;
         }
     }
