@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 2075828411590861722}
   - component: {fileID: 2075828411590861727}
   - component: {fileID: 2075828411590861726}
+  - component: {fileID: 5581107984661849810}
+  - component: {fileID: 9149256592075469963}
   m_Layer: 0
   m_Name: LekkerVerberens
   m_TagString: mixieerBulang
@@ -122,7 +124,9 @@ MonoBehaviour:
   lerpFactor: 0.1
   confirm: 0
   Direction: 0
+  debug: {fileID: 0}
   formerposition: {x: 0, y: 0, z: 0}
+  canvas: {fileID: 0}
 --- !u!114 &2075828411590861726
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -139,3 +143,56 @@ MonoBehaviour:
   chracterName: 
   Sprites: []
   spelleList: []
+--- !u!114 &5581107984661849810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075828411590861723}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d0b148fe25e99eb48b9724523833bab1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Delegates:
+  - eventID: 0
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 1
+    callback:
+      m_PersistentCalls:
+        m_Calls: []
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 2075828411590861727}
+          m_TargetAssemblyTypeName: chracterMove, Assembly-CSharp
+          m_MethodName: OMClick
+          m_Mode: 0
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+--- !u!70 &9149256592075469963
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2075828411590861723}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.53999996, y: 1.1599998}
+  m_Direction: 0

@@ -54,7 +54,7 @@ public class cubeController : MonoBehaviour
     private void OMEnter(BaseEventData pointData) {
         omEnter();
     }
-    public void omEnter(){
+    private void omEnter(){
         Debug.Log("MouseHit!");
         moveUp(); //有bug待修复
     }
@@ -62,7 +62,7 @@ public class cubeController : MonoBehaviour
     private void OMExit(BaseEventData pointData) {
         omExit();
     }
-    public void omExit(){
+    private void omExit(){
         Debug.Log("MouseLeave!");
         moveDown();
     }
@@ -77,7 +77,7 @@ public class cubeController : MonoBehaviour
     }
 
 
-    public void omClick(){
+    private void omClick(){
         Debug.Log("MouseClicked!");
         //闪现走法
         // _player.transform.position = new Vector3(thisBlock.transform.position.x,

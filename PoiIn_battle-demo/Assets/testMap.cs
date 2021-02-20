@@ -79,9 +79,9 @@ public class testMap : MonoBehaviour
 	{
 		Dictionary<Vector3Int,int> testBlock = new Dictionary<Vector3Int, int>();
 
-		for (int i = 0; i < 5; i++)
+		for (int i = 0; i < 16; i++)//预设15x15地图
 		{
-			for (int j = 0; j < 5; j++)
+			for (int j = 0; j < 16; j++)
 			{
 				testBlock.Add(new Vector3Int(i,0,j),0);
 			}

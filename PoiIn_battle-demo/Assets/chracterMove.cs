@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class chracterMove : MonoBehaviour
 {
@@ -67,6 +68,7 @@ public class chracterMove : MonoBehaviour
     
     public bool confirm = false;
     public direction Direction;
+    // public Transform debug;
     private void Update()
     {
         if (confirm == true)
@@ -74,7 +76,8 @@ public class chracterMove : MonoBehaviour
             confirm = false;
             moveTo(Direction);
         }
-        
+        // debug = this.transform.GetChild(0);
+        // this.transform.GetChild(0).position = _2Dposition;
     }
 
     public Vector3 formerposition;//理论起点
@@ -166,6 +169,17 @@ public class chracterMove : MonoBehaviour
     {
         Direction = _direction;
         confirm = true;
+    }
+
+
+
+    public GameObject canvas;
+    public void OMClick(BaseEventData data){
+        omClick();
+    }
+
+    private void omClick(){
+        canvas.SetActive(true);
     }
     
 }
