@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -7,14 +8,18 @@ public class roundScrollView : MonoBehaviour
 {
     Vector3 originposition;
     private GameObject followSphere;
+    public GameObject judgeAbsorb;
     private Rigidbody2D rigidbody;
     Vector3 autoMove;
     private float speed = 0;
     private float scale = 1;
+    public bool canAbsorb = false;
+    // public Vector2 sped;
 
     void Start()
     {
         followSphere = GameObject.Find("sphereToMoveAround");
+        judgeAbsorb = GameObject.Find("judgeAbsorbCollider");
         rigidbody = followSphere.GetComponent<Rigidbody2D>();
         originposition = GameObject.Find("stationarySphere").transform.position;
         StartListeners(this.gameObject);
@@ -62,10 +67,23 @@ public class roundScrollView : MonoBehaviour
             rigidbody.velocity *= scale;
         }
 
+        // sped = rigidbody.velocity;
+
         //圆周运动部分
 
         rigidbody.transform.rotation = Quaternion.Euler(new Vector3(0,0,0));//有些抖动残影呢，先这样再说
         //可以把显示图片的部分单独拎出来做一个GameObject，跟随小圆坐标位置，应该就不抖了
+
+        if(rigidbody.transform.position.y > judgeAbsorb.transform.position.y-10 &&
+            rigidbody.transform.position.y < judgeAbsorb.transform.position.y+10 &&
+            rigidbody.transform.position.x > judgeAbsorb.transform.position.x-25 &&
+            rigidbody.transform.position.x < judgeAbsorb.transform.position.x+25
+        
+        ){//absorb阈值
+            canAbsorb = true;
+        }else{
+            canAbsorb = false;
+        }
 
     }
     //心情好再用迭代器优化下试试
@@ -75,6 +93,13 @@ public class roundScrollView : MonoBehaviour
         Vector3 resultVector = center + point;
         return (resultVector - center).normalized; //向心方向向量
     }
+
+    // private void Absorbtion(){
+    //     Collider2D absorbJudge = this.transform.Find("judgeAbsorbCollider").GetComponent<Collider2D>();
+
+
+    // }
+
 
     private void StartListeners(GameObject gameObj){
         // EventTrigger trigger = gameObj.GetComponent<EventTrigger>();

@@ -12,6 +12,13 @@ public class cubeController : MonoBehaviour
     public Vector3Int abstractPosition;//方便调试与调用
     private GameObject _player;
     private cubeLerp _cubeLerp;
+    // public struct a4Star{
+    //     int F,f,g,h;
+    // }
+    
+    // public float f;
+    // public float g;
+    // public float h;
 
     // Start is called before the first frame update
     void Start()
@@ -118,8 +125,8 @@ public class cubeController : MonoBehaviour
     public void moveUp(){
         target2Dposition4Cube = originalPosition + new Vector3(0, 0.1f, 0);
         StartCoroutine(
-        lerpMove(thisBlock,
-            0.1f
+            lerpMove(thisBlock,
+                0.1f
             )
         );
         collider2D.size = new Vector2(0.3f,0.5f);
@@ -129,8 +136,8 @@ public class cubeController : MonoBehaviour
     public void moveDown(){
         target2Dposition4Cube = originalPosition;
         StartCoroutine(
-        lerpMove(thisBlock,
-            0.1f
+            lerpMove(thisBlock,
+                0.1f
             )
         );
         collider2D.size = new Vector2(0.3f,0.3f);

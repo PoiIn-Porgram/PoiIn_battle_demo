@@ -137,7 +137,8 @@ public class testController : MonoBehaviour
         if (GUILayout.Button("aStar"))
         {
             Debug.Log("aStar!");
-            _aStar.aiRoadFinder();
+            // _aStar.aiRoadFinder();
+            StartCoroutine(_aStar.aStarSeq());
         }
         
         if (GUILayout.Button("damage"))
@@ -177,6 +178,11 @@ public class testController : MonoBehaviour
         {
             _scriptableObjectAnalyser.token();
         }
+
+    }
+
+    private void Update() {
+
     }
     
 }

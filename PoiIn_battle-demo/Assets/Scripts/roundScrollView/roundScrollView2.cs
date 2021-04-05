@@ -33,6 +33,22 @@ public class roundScrollView2 : MonoBehaviour
 
     }
 
+    // IEnumerator lerpMove(GameObject gameObj, Quaternion target2Drotation, float lerpFactor)
+    // {
+    //     gameObj.transform.rotation = Quaternion.Euler(Vector3.Lerp(gameObj.transform.rotation.eulerAngles, target2Drotation.eulerAngles, lerpFactor));
+    //     if (Vector3.SqrMagnitude(target2Drotation.eulerAngles -  gameObj.transform.rotation.eulerAngles)<1f)
+    //     {
+    //         gameObj.transform.rotation = target2Drotation;
+    //         yield return 0;
+    //     }
+    //     else
+    //     {
+    //         yield return new WaitForSeconds(0.02f);
+    //         StartCoroutine(lerpMove(gameObj, target2Drotation, lerpFactor));
+    //     }
+    //     yield return 0;
+    // }
+
     private void StartListeners(GameObject gameObj){
         // EventTrigger trigger = gameObj.GetComponent<EventTrigger>();
         EventTrigger trigger = gameObj.AddComponent<EventTrigger>();

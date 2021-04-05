@@ -42,12 +42,16 @@ public class aStar : MonoBehaviour
         
     }
 
+    ///<summary>
+    ///ai寻路，在aStar.cs中修改，目前设定触发一次寻路移动四格
+    ///</summary>
     public void aiRoadFinder(){
         
         abstractPosition = toAstar.GetComponent<chracterMove>().thisPosition;
         go2AbPosition = abstractPosition;
         Direction = chracterMove.direction.hold;
         F=f=g=h=100;
+        
         // g = 1;
         // h = (float)Math.Sqrt(
         //     Math.Pow(
@@ -70,6 +74,35 @@ public class aStar : MonoBehaviour
         Vector3Int abLeft = abstractPosition + new Vector3Int(-1,0,0);
         Vector3Int abRight = abstractPosition + new Vector3Int(1,0,0);
 
+        // //completeMap
+        // foreach(var i in _cubeManager.allCubes){
+        //     Vector3Int iAbPos = i.GetComponent<cubeController>().abstractPosition;//将地砖的AbPos记录，简化代码
+        //     // Debug.Log(i.GetComponent<cubeController>().abstractPosition);
+        //     _cubeController.g = 1;
+        //     _cubeController.h = (float)Math.Sqrt(
+        //         Math.Pow(
+        //             Math.Abs((targetPosition.x+1 - (abUp.x+1))),
+        //             2.0)+
+        //         Math.Pow(
+        //             Math.Abs((targetPosition.y+1 - (abUp.y+1))),
+        //             2.0)+
+        //         Math.Pow(
+        //             Math.Abs((targetPosition.z+1 - (abUp.z+1))),
+        //             2.0)
+        //     );
+        //     _cubeController.f = _cubeController.g + _cubeController.h;
+        //     Debug.Log(f);
+        //     if(_cubeController.f<F){
+        //         F=f;
+        //         Direction = chracterMove.direction.front;
+        //         go2AbPosition = iAbPos;
+        //         // go2RePosition = chracter2Dposition.get2Dposition(iAbPos);
+        //     }
+        // }
+
+
+
+        //single
         foreach(var i in _cubeManager.allCubes){
             // 这里可优化，遍历一遍费资源
             // if(abUp.x < xMax && abUp.z < zMax){
@@ -179,7 +212,23 @@ public class aStar : MonoBehaviour
         toAstar.GetComponent<chracterMove>().chracterMoveTo(Direction);
         Debug.Log(toAstar.GetComponent<chracterMove>().thisPosition);
 
-        //以下为启用循环
-        // aiRoadFinder();
+    }
+
+    //以下为启用循环
+    private int i = 0;
+    
+    public IEnumerator aStarSeq()
+    {
+        if(i<4){//决定走几步
+            aiRoadFinder();
+            i++;
+            Debug.Log(i);
+            yield return new WaitForSeconds(0.5f);
+            StartCoroutine(aStarSeq());
+        }else{
+            i=0;
+            yield return 0;
+        }
     }
 }
+

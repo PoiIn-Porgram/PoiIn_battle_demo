@@ -33,6 +33,13 @@ public class chracterMove : MonoBehaviour
     private eventSinario _eventSinario;
     private testMap _testMap;
     private cubeLerp _cubeLerp;
+
+    //行进记录部分
+    private direction moved = new direction();
+    private direction oppoMoved = new direction();
+    public Stack haveMoved = new Stack();
+    
+
     private void Start()
     {
         Debug.Log(thisPosition);
@@ -42,6 +49,7 @@ public class chracterMove : MonoBehaviour
          _testMap = FindObjectOfType<testMap>();
          _cubeLerp = FindObjectOfType<cubeLerp>();
          formerposition = transform.position;//初始化起点
+        
     }
 
     // IEnumerator lerpMove()
@@ -75,14 +83,74 @@ public class chracterMove : MonoBehaviour
         {
             confirm = false;
             moveTo(Direction);
+            moved = Direction;
+            //行进记录，便于esc撤销移动，使用一个栈结构
+            switch(moved){
+                case direction.front:
+                    oppoMoved = direction.back;
+                    haveMoved.Push(oppoMoved);
+                    break;
+                case direction.back:
+                    oppoMoved = direction.front;
+                    haveMoved.Push(oppoMoved);                    
+                    break;
+                case direction.left:
+                    oppoMoved = direction.right;
+                    haveMoved.Push(oppoMoved);
+                    break;
+                case direction.right:
+                    oppoMoved = direction.left;
+                    haveMoved.Push(oppoMoved);
+                    break;
+                case direction.hold:
+                    break;
+            }
+            foreach(var i in haveMoved)
+                print(i);
+        }
+
+        //direction为本脚本专有enum，别的脚本调不到，因此测试代码放这儿
+        //后期可以优化一下enum形式，现在的前后左右也太麻烦
+        if(Input.GetKeyDown(KeyCode.Escape) && haveMoved.Count!=0){
+            // _chracterMove.haveMoved.Peek();
+            // confirm = true;
+            print("----");
+            foreach(var i in haveMoved)
+                print(i);
+            // if(confirm){
+                // moveTo((direction)haveMoved.Pop());
+                StartCoroutine(escBackSeq(haveMoved.Count));
+                // confirm=false;
+            // }
         }
         // debug = this.transform.GetChild(0);
         // this.transform.GetChild(0).position = _2Dposition;
     }
 
+    ///<summary>
+    ///以下为启用循环
+    ///有点小bug似乎，没查到
+    ///</summary>
+
+    /// private int i = 0;
+    public IEnumerator escBackSeq(int i)
+    {
+        if(i>0/*<4*/){//决定走几步
+            moveTo((direction)haveMoved.Pop());
+            // i++;
+            i--;
+            // Debug.Log(i);
+            yield return new WaitForSeconds(0.1f);
+            StartCoroutine(escBackSeq(i));
+        }else{
+            // i=0;
+            yield return 0;
+        }
+    }
+
     public Vector3 formerposition;//理论起点
 
-    public void  moveTo(direction _direction)
+    public void moveTo(direction _direction)
     {
 
         switch (_direction)
@@ -108,7 +176,6 @@ public class chracterMove : MonoBehaviour
                     thisPosition.y,
                     thisPosition.z)))
                 {
-
                     thisPosition = new Vector3Int(thisPosition.x - 1,
                         thisPosition.y,
                         thisPosition.z);
